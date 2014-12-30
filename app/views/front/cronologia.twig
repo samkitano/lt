@@ -111,232 +111,173 @@
 	    {% include('front.partials._tags-menu') %}
     </div>#}
 
-	<div class="cronologia2 container" style="margin-top: 70px;">
-		<div class="col-xs-3 no-padding-left">
-			<div class="cronologia-left">
-				<div class="block-top">
-					<a style="text-indent: 10px;" href="{{ route('profile', auth_user().username) }}">
-						<li style="padding: 0;">
-							<img class="img-rounded" src="{{ url('img/profile/avatar/'~user.profile_img) }}" alt="" width="30px" height="30px"> {{ user.username }}
-						</li>
-					</a>
-				</div>
-				<ul style="margin-top: 0px;">
-					<div class="block">
-						<a href="">
-							<li><i class="fa fa-envelope"></i> &nbsp;Mensagens</li>
-						</a>
+    <div class="cronologia2 container" style="margin-top: 70px;">
+        <div class="col-xs-1 no-padding-left">
+            <div class="cronologia-left">
+                <div class="block-top">
+                    <a style="text-align: center;" href="{{ route('profile', auth_user().username) }}">
+                        <li>
+                            <img class="img-rounded" src="{{ url('img/profile/avatar/'~user.profile_img) }}" alt="" width="30px" height="30px">
+                        </li>
+                    </a>
+                </div>
+                <ul>
+                    <div class="block">
+                        <a style="text-align: center;" data-toggle="tooltip" data-placement="right" title="Mensagens" href="">
+                            <li><i class="fa fa-envelope"></i></li>
+                        </a>
 
-						<a href="">
-							<li><i class="fa fa-star"></i> &nbsp;Recomendações</li>
-						</a>
+                        <a style="text-align: center;" data-toggle="tooltip" data-placement="right" title="Recomendações" href="">
+                            <li><i class="fa fa-star"></i></li>
+                        </a>
 
-						<a href="">
-							<li><i class="fa fa-users"></i> &nbsp;Amigos</li>
-						</a>
+                        <a style="text-align: center;" data-toggle="tooltip" data-placement="right" title="Amigos" href="">
+                            <li><i class="fa fa-users"></i></li>
+                        </a>
 
-						<a href="">
-							<li><i class="fa fa-heart"></i> &nbsp;Favoritos</li>
-						</a>
+                        <a style="text-align: center;" data-toggle="tooltip" data-placement="right" title="Favoritos" href="">
+                            <li><i class="fa fa-heart"></i></li>
+                        </a>
 
-						<a href="">
-							<li><i class="fa fa-clock-o"></i> &nbsp;Ver mais tarde</li>
-						</a>
-					</div>
-				</ul>
-			</div>
-		</div>
+                        <a style="text-align: center;" data-toggle="tooltip" data-placement="right" title="Ver mais tarde" href="">
+                            <li><i class="fa fa-clock-o"></i></li>
+                        </a>
+                    </div>
+                </ul>
+            </div>
+        </div>
 
-		<div class="col-xs-6 no-padding">
-			<div class="row">
-				<textarea placeholder="Escreve algo..."></textarea>
-				<div class="block-bottom" style="margin-top: -1px; padding: 5px;">
+        <div class="col-xs-8 no-padding">
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2 no-padding">
+                    <textarea placeholder="Escreve algo..."></textarea>
+                    <div class="block-bottom" style="margin-top: -1px; padding: 5px;">
                         <span style="padding: 0 10px; line-height: 26px">
                             <a class="black-9 small" href="#"><i class="fa fa-picture-o"></i> Enviar poster</a>
                             <a class="black-9 small" href="#" style="margin-left: 20px;"><i class="fa fa-tag"></i> Adicionar tag</a>
                             <a class="black-9 small" href="#" style="margin-left: 20px;"><i class="fa fa-user"></i> Identificar amigo</a>
-                        </span>
+                       </span>
 
-					<button class="btn btn-primary pull-right" style="padding: 2px 10px;">Enviar</button>
-					<div class="clearfix"></div>
-				</div>
-			</div>
+                        <button class="btn btn-primary pull-right" style="padding: 2px 10px;">Enviar</button>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
 
-			<div class="row">
-				<div class="block">
-					<div class="row">
-						<img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="40px" height="40px">
-						<p style="margin-left: 50px;"><a href="#"><b>João Paulo</b></a></p>
-						<p style="margin-left: 50px;" class="fading-text">19 horas atrás</p>
-					</div>
 
-					<div class="row" style="margin: 10px 0;">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</div>
+            <div class="row">
+                <div class="col-md-2 no-padding-left" style="padding-right: 5px;">
+                    <a href="">
+                        <img class="timeline-avatar pull-right" src="{{ url('img/profile/avatar/'~user.profile_img) }}" alt="" width="50px" height="50px">
+                    </a>
+                </div>
 
-					<div class="row">
-						<a href="#">Gosto</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Comentar</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Mais</a> <span class="pull-right fading-text" ><i class="fa fa-heart"></i>17&nbsp;&nbsp;<i class="fa fa-comment"></i>3</span>
-					</div>
-				</div>
+                <div class="col-md-10 no-padding">
+                    <div class="block">
+                        <div class="">
+                            <p><b>João Caetano</b></p>
+                        </div>
+                        <div class="row" style="margin-bottom: 10px">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                        </div>
 
-				<div class="block-bottom">
-					<div class="row">
-						<img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
-						<p style="margin-left: 40px;">
-							<a href="#"><b>João Paulo</b></a>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							<br>
-							<span class="fading-text"><a href="#">Gosto</a> <span style="font-size: 10px;">•</span> 18 minutos atrás</span>
-						</p>
-					</div>
-				</div>
-				<div class="block-bottom">
-					<div class="row">
-						<img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
-						<textarea placeholder="Escreve algo..."></textarea>
-					</div>
-				</div>
-			</div>
+                        <div class="row">
+                            <a href="#">Gosto</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Comentar</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Mais</a> <span class="pull-right fading-text" ><i class="fa fa-heart"></i>17&nbsp;&nbsp;<i class="fa fa-comment"></i>3</span>
+                        </div>
+                    </div>
 
-			<div class="row">
-				<div class="block">
-					<div class="row">
-						<img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="40px" height="40px">
-						<p style="margin-left: 50px;"><a href="#"><b>João Paulo</b></a></p>
-						<p style="margin-left: 50px;" class="fading-text">19 horas atrás</p>
-					</div>
+                    <div class="block-bottom">
+                        <div class="row">
+                            <a href="#">
+                                <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="timeline-avatar" alt="" width="30px" height="30px">
+                            </a>
+                            <p style="margin-left: 40px;">
+                                <a href="#"><b>João Paulo</b></a>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                <br>
+                                <span class="fading-text"><a href="#">Gosto</a> <span style="font-size: 10px;">•</span> 18 minutos atrás</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="block-bottom">
+                        <div class="row">
+                            <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="timeline-avatar" alt="" width="30px" height="30px">
+                            <textarea placeholder="Escreve algo..."></textarea>
+                        </div>
+                    </div>
+                </div>
 
-					<div class="row" style="margin: 10px 0;">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</div>
 
-					<div class="row">
-						<a href="#">Gosto</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Comentar</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Mais</a>
-					</div>
-				</div>
-				<div class="block-bottom" style="padding: 5px 10px;">
-					<i class="fa fa-comment fading-text"></i> <a href="#">Mostrar mais comentarios</a>
-				</div>
-				<div class="block-bottom">
-					<div class="row">
-						<img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
-						<p style="margin-left: 40px;">
-							<a href="#"><b>João Paulo</b></a>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							<br>
-							<span class="fading-text"><a href="#">Gosto</a> <span style="font-size: 10px;">•</span> 18 minutos atrás</span>
-						</p>
-					</div>
-				</div>
-				<div class="block-bottom">
-					<div class="row">
-						<img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
-						<p style="margin-left: 40px;">
-							<a href="#"><b>João Paulo</b></a>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							<br>
-							<span class="fading-text"><a href="#">Gosto</a> <span style="font-size: 10px;">•</span> 18 minutos atrás</span>
-						</p>
-					</div>
-				</div>
-				<div class="block-bottom">
-					<div class="row">
-						<img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
-						<textarea placeholder="Escreve algo..."></textarea>
-					</div>
-				</div>
-			</div>
+            </div>
 
-			<div class="row">
-				<div class="block">
-					<div class="row">
-						<img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="40px" height="40px">
-						<p style="margin-left: 50px;"><a href="#"><b>João Paulo</b></a></p>
-						<p style="margin-left: 50px;" class="fading-text">19 horas atrás</p>
-					</div>
-
-					<div class="row" style="margin: 10px 0;">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</div>
-
-					<div class="row">
-						<a href="#">Gosto</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Comentar</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Mais</a>
-					</div>
-				</div>
-			</div>
-			<div class="block-bottom">
-				<div class="row">
-					<img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
-					<textarea placeholder="Escreve algo..."></textarea>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-3 no-padding-right">
-			<div class="cronologia-right">
-				<div class="block-top">
-					Episódios por vir
-				</div>
-				<div class="block">
-					<ul class="new-epi">
-						<a href="#"><li>Naruto - T03 E45</li></a>
-						<a href="#"><li>Naruto - T03 E45</li></a>
-						<a href="#"><li>Naruto - T03 E45</li></a>
-						<a href="#"><li>Naruto - T03 E45</li></a>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+        </div>
+        <div class="col-xs-3 no-padding-right">
+            <div class="cronologia-right">
+                <div class="block-top">
+                    Episódios por vir
+                </div>
+                <div class="block">
+                    <ul class="new-epi">
+                        <a href="#"><li>Naruto - T03 E45</li></a>
+                        <a href="#"><li>Naruto - T03 E45</li></a>
+                        <a href="#"><li>Naruto - T03 E45</li></a>
+                        <a href="#"><li>Naruto - T03 E45</li></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block scripts %}
-	{{ parent() }}
+    {{ parent() }}
 
-	<script>
-		$('#send_post').on('click', function(e){
-			e.preventDefault();
-			var to_post = $('#create_post_content');
-			var cont = addslashes(to_post.val());
-			if (cont.trim() == '')
-			{
-				to_post.val('');
-				alert('Escreve algo!');
-				return false;
-			}
+    <script>
+        $('#send_post').on('click', function(e){
+            e.preventDefault();
+            var to_post = $('#create_post_content');
+            var cont = addslashes(to_post.val());
+            if (cont.trim() == '')
+            {
+                to_post.val('');
+                alert('Escreve algo!');
+                return false;
+            }
 
-			var jqxhr = $.post('{{ route("ajax_send_post") }}',
-					{user:'{{ tuser.id }}', author:'{{ author.id }}', content:cont},
-					function(data)
-			{
-			})
-			.done(function(data) {
-				var post = JSON.parse(data);
-				to_post.val('');
-			   var container = $('#post_container');
-					var html =   '<div class="row posts">'
-								+'<div class="block post-block" id="post_' + post['id'] + '">'
-								+'<div class="row block-heading">'
-								+'<img src="{{ url('img/profile/avatar/'~author.profiles.profile_img) }}" class="post-avatar img-circle" alt="avatar" width="40px" height="40px">'
-								+'<p><a href="{{ route('profile', author.username) }}"><strong>{{ author.username }}</strong></a></p>'
-								+'<p class="fading-text">' + post['created_at'] + '</p>'
-								+'<div class="row post-content">' + cont + '</div>'
-								+'<div class="row block-footer">'
-								+'<a href="#">Gosto</a>&nbsp;'
-								+'<span class="fading-text f10">&bullet;</span>&nbsp;'
-								+'<a href="#">Comentar</a>&nbsp;'
-								+'<span class="fading-text f10">&bullet;</span>&nbsp;'
-								+'<a href="#">Mais</a>&nbsp;'
-								+'<span class="pull-right fading-text" >'
-								+'<i class="fa fa-heart"></i>&nbsp;'+'0'+'&nbsp;&nbsp;'
-								+'<i class="fa fa-comment"></i>&nbsp;'+'0'
-								+'</span>'
-								+'</div>'
-								+'</div>'
-				container.prepend(html);
-			})
-			.fail(function() {
-				alert( "error" );
-			})
-		})
-	</script>
+            var jqxhr = $.post('{{ route("ajax_send_post") }}',
+                    {user:'{{ tuser.id }}', author:'{{ author.id }}', content:cont},
+                    function(data)
+                    {
+                    })
+                    .done(function(data) {
+                        var post = JSON.parse(data);
+                        to_post.val('');
+                        var container = $('#post_container');
+                        var html =   '<div class="row posts">'
+                                +'<div class="block post-block" id="post_' + post['id'] + '">'
+                                +'<div class="row block-heading">'
+                                +'<img src="{{ url('img/profile/avatar/'~author.profiles.profile_img) }}" class="post-avatar img-circle" alt="avatar" width="40px" height="40px">'
+                                +'<p><a href="{{ route('profile', author.username) }}"><strong>{{ author.username }}</strong></a></p>'
+                                +'<p class="fading-text">' + post['created_at'] + '</p>'
+                                +'<div class="row post-content">' + cont + '</div>'
+                                +'<div class="row block-footer">'
+                                +'<a href="#">Gosto</a>&nbsp;'
+                                +'<span class="fading-text f10">&bullet;</span>&nbsp;'
+                                +'<a href="#">Comentar</a>&nbsp;'
+                                +'<span class="fading-text f10">&bullet;</span>&nbsp;'
+                                +'<a href="#">Mais</a>&nbsp;'
+                                +'<span class="pull-right fading-text" >'
+                                +'<i class="fa fa-heart"></i>&nbsp;'+'0'+'&nbsp;&nbsp;'
+                                +'<i class="fa fa-comment"></i>&nbsp;'+'0'
+                                +'</span>'
+                                +'</div>'
+                                +'</div>'
+                        container.prepend(html);
+                    })
+                    .fail(function() {
+                        alert( "error" );
+                    })
+        })
+    </script>
 {% endblock %}
