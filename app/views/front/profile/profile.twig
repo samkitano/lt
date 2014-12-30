@@ -1,0 +1,86 @@
+{% extends 'layouts.master' %}
+
+{% block title %}{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <div class="container profile" style="padding: 0; margin-top: 49px;">
+	    <div class="col-md-12">
+		    <div class="profile-top">
+			    <div class="thumbnail">
+				    <div class="user-cover-image">
+					    <img style="z-index: 1; overflow: hidden" src="{{ url('img/profile/cover/'~utilizador.cover_img) }}" alt="" width="100%" height="375px">
+				    </div>
+				    <div class="col-md-12" style="padding: 0;">
+					    <div class="avatar-overlay">
+						    <img style="float: left;" src="{{ url('img/profile/avatar/'~utilizador.profile_img) }}" class="img-circle" width="80px" height="80px">
+
+						    <div style="margin-left: 90px">
+							    <p><b>{{ user.nome }} {{ user.apelido }}</b></p>
+							    <p>@{{ user.username }}</p>
+
+							    <hr style="margin: 5px 0;">
+                            <span class="pull-right">
+                            <button style="padding: 3px 10px;" class="btn btn-primary"><span class="small"><i class="fa fa-user"></i> Adicionar Amigo</span></button>
+                            <button style="padding: 3px 10px;" class="btn btn-primary"><span class="small"><i class="fa fa-envelope-o"></i> Enviar Mensagem</span></button>
+                            <button style="padding: 3px 10px;" class="btn btn-primary"><span class="small"><i class="fa fa-ellipsis-h"></i></span></button>
+                        </span>
+							    <p style="line-height: 28px;">
+								    <span style="font-size:20px;">28</span> visualizações
+								    <span style="margin-left: 20px; font-size:20px;">28</span> Amigos
+								    <span style="margin-left: 20px; font-size:20px;">28</span> Seguidores</p>
+
+						    </div>
+					    </div>
+				    </div>
+				    <nav class="user-menu">
+					    <ul>
+						    <a style="font-size: 15px;" class="black-6" href="{{ route('profile', auth_user().username) }}">
+							    {% if active == 'profile' %}
+							    <li class="active">
+								    {% else %}
+							    <li>
+								    {% endif %}
+								    Cronologia
+							    </li>
+						    </a>
+
+						    <a style="font-size: 15px;" class="black-6" href="{{ route('amigos', auth_user().username) }}">
+							    {% if active == 'amigos' %}
+							    <li class="active">
+								    {% else %}
+							    <li>
+								    {% endif %}
+								    Amigos
+							    </li>
+						    </a>
+
+						    <a style="font-size: 15px;" class="black-6" href="{{ route('favoritos', auth_user().username) }}">
+							    {% if active == 'favoritos' %}
+							    <li class="active">
+								    {% else %}
+							    <li>
+								    {% endif %}
+								    Favoritos
+							    </li>
+						    </a>
+					    </ul>
+				    </nav>
+			    </div>
+		    </div>
+	    </div>
+	    {% block profile %}{% endblock %}
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+	{{ parent() }}
+{% endblock %}

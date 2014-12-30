@@ -1,0 +1,1 @@
+D:\xampp\htdocs\livetuga\app/views/friends/show.blade.php

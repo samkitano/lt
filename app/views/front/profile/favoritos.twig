@@ -1,0 +1,53 @@
+{% extends 'front.profile.profile' %}
+
+{% block title %}{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+{% endblock %}
+
+{% block profile %}
+    <div class="col-xs-4">
+        <div class="block">
+            <div class="row">
+                ORGANIZAR FAVORITOS
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <div class="col-xs-8">
+        <div class="block">
+            <div class="row">
+                FAVORITOS
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="poster"><a href="{{ route('himym') }}" class="thumbnail"><img src="{{ url('img/capas/poster.jpg') }}"></a></div>
+                <div class="poster"><a href="{{ route('himym') }}" class="thumbnail"><img src="{{ url('img/capas/poster.jpg') }}"></a></div>
+                <div class="poster"><a href="{{ route('himym') }}" class="thumbnail"><img src="{{ url('img/capas/poster.jpg') }}"></a></div>
+                <div class="poster"><a href="{{ route('himym') }}" class="thumbnail"><img src="{{ url('img/capas/poster.jpg') }}"></a></div>
+                <div class="poster"><a href="{{ route('himym') }}" class="thumbnail"><img src="{{ url('img/capas/poster.jpg') }}"></a></div>
+
+                <div class="poster"><a href="{{ route('himym') }}" class="thumbnail"><img src="{{ url('img/capas/poster.jpg') }}"></a></div>
+                <div class="poster"><a href="{{ route('himym') }}" class="thumbnail"><img src="{{ url('img/capas/poster.jpg') }}"></a></div>
+                <div class="poster"><a href="{{ route('himym') }}" class="thumbnail"><img src="{{ url('img/capas/poster.jpg') }}"></a></div>
+                <div class="poster"><a href="{{ route('himym') }}" class="thumbnail"><img src="{{ url('img/capas/poster.jpg') }}"></a></div>
+                <div class="poster"><a href="{{ route('himym') }}" class="thumbnail"><img src="{{ url('img/capas/poster.jpg') }}"></a></div>
+
+                <div class="poster"><a href="{{ route('himym') }}" class="thumbnail"><img src="{{ url('img/capas/poster.jpg') }}"></a></div>
+                <div class="poster"><a href="{{ route('himym') }}" class="thumbnail"><img src="{{ url('img/capas/poster.jpg') }}"></a></div>
+                <div class="poster"><a href="{{ route('himym') }}" class="thumbnail"><img src="{{ url('img/capas/poster.jpg') }}"></a></div>
+                <div class="poster"><a href="{{ route('himym') }}" class="thumbnail"><img src="{{ url('img/capas/poster.jpg') }}"></a></div>
+                <div class="poster"><a href="{{ route('himym') }}" class="thumbnail"><img src="{{ url('img/capas/poster.jpg') }}"></a></div>
+            </div>
+
+            <button class="btn btn-primary button-full">CARREGAR MAIS</button>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,209 @@
+{% extends 'layouts.master' %}
+
+{% block title %}
+    Nome do Video
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <section class="video-info">
+    <div class="jumbotron">
+        <img src="{{ url('/img/videos/capas/simpsons.jpg') }}">
+    </div>
+
+    <div class="block">
+        <div class="container">
+            <div class="movie-description">
+                <div class="row collapse-group">
+                    <div class="col-md-2 no-padding-left">
+                        <img class="thumbnail img-responsive" src="{{ url('img/videos/thumbnails/simpsons.png') }}">
+                    </div>
+
+                    <div class="col-md-10">
+                        <p style="line-height: 10px;">
+                                <span class="title">
+                                    How I Met Your Mother
+                                </span>
+                                <span class="pull-right">
+                                    <a class="black-6" href="#"><i class="fa fa-thumbs-up"></i> Gosto</a> &nbsp;&nbsp;&nbsp;
+                                    <a class="black-6" href="#"><i class="fa fa-thumbs-down"></i></a>
+                                </span>
+                        </p>
+                        <hr>
+                        <p>
+                            "How I Met Your Mother" é uma original comédia sobre Ted (Rosh Radnor) e como ele se apaixonou.
+                            Quando os melhores amigos de Ted, Marshall (Jason Segel) e Lily (Alyson Hannigan) se decidem casar,
+                            isso incentiva-o a encontrar uma alma gémea para si. A ajudá-lo na sua busca está o seu amigo
+                            frequentador de bares, Barney (Neil Patrick Harris), um solteirão incorrigível com inúmeros esquemas
+                            para conhecer mulheres. A atenção de Ted está centrada na fascinante e independente Robin
+                            (Cobie Smulders), mas o destino pode ter algo diferente em mente. Narrado através de uma série de
+                            flashbacks, Ted recorda os seus dias de solteiro, os pontos altos e baixos dos encontros e a busca
+                            pelo amor verdadeiro.
+                        </p>
+                    </div>
+
+                    <div class="col-md-10 col-md-offset-2">
+                        <div class="clearfix"></div>
+                        <div class="collapse small">
+                            <br>
+                            <p><strong>Comédia, Drama (2012)</strong></p>
+                            <p><strong>4</strong> Temporadas e <strong>102</strong> Episódios</p>
+                            <br>
+                            <strong>Realizador:</strong> John Hughes</p>
+                            <strong>Elenco:</strong> Anthony Michael Hall, Kelly LeBrock, Ilan Mitchell-Smith, Bill Paxton</p>
+                        </div>
+                        <hr style="margin-top: 0;">
+
+                        <p style="text-align: center;"><a class="read-more small black-6" href="#"><strong>MAIS DETALHES</strong></a></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="col-xs-8 no-padding-left">
+            <div class="row" style="margin:0;">
+                <textarea placeholder="Escreve algo..."></textarea>
+                <div class="block-bottom" style="margin-top: -1px; padding: 5px;">
+                        <span style="padding: 0 10px; line-height: 26px">
+                            <a class="black-9 small" href="#"><i class="fa fa-picture-o"></i> Enviar poster</a>
+                            <a class="black-9 small" href="#" style="margin-left: 20px;"><i class="fa fa-tag"></i> Adicionar tag</a>
+                            <a class="black-9 small" href="#" style="margin-left: 20px;"><i class="fa fa-user"></i> Identificar amigo</a>
+                        </span>
+
+                    <button class="btn btn-primary pull-right" style="padding: 2px 10px;">Enviar</button>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="block">
+                    <div class="row">
+                        <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="40px" height="40px">
+                        <p style="margin-left: 50px;"><a href="#"><b>João Paulo</b></a></p>
+                        <p style="margin-left: 50px;" class="fading-text">19 horas atrás</p>
+                    </div>
+
+                    <div class="row" style="margin: 10px 0;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </div>
+
+                    <div class="row">
+                        <a href="#">Gosto</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Comentar</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Mais</a> <span class="pull-right fading-text" ><i class="fa fa-heart"></i>17&nbsp;&nbsp;<i class="fa fa-comment"></i>3</span>
+                    </div>
+                </div>
+
+                <div class="block-bottom">
+                    <div class="row">
+                        <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
+                        <p style="margin-left: 40px;">
+                            <a href="#"><b>João Paulo</b></a>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            <br>
+                            <span class="fading-text"><a href="#">Gosto</a> <span style="font-size: 10px;">•</span> 18 minutos atrás</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="block-bottom">
+                    <div class="row">
+                        <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
+                        <textarea placeholder="Escreve algo..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="block">
+                    <div class="row">
+                        <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="40px" height="40px">
+                        <p style="margin-left: 50px;"><a href="#"><b>João Paulo</b></a></p>
+                        <p style="margin-left: 50px;" class="fading-text">19 horas atrás</p>
+                    </div>
+
+                    <div class="row" style="margin: 10px 0;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </div>
+
+                    <div class="row">
+                        <a href="#">Gosto</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Comentar</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Mais</a>
+                    </div>
+                </div>
+                <div class="block-bottom" style="padding: 5px 10px;">
+                    <i class="fa fa-comment fading-text"></i> <a href="#">Mostrar mais comentarios</a>
+                </div>
+                <div class="block-bottom">
+                    <div class="row">
+                        <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
+                        <p style="margin-left: 40px;">
+                            <a href="#"><b>João Paulo</b></a>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            <br>
+                            <span class="fading-text"><a href="#">Gosto</a> <span style="font-size: 10px;">•</span> 18 minutos atrás</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="block-bottom">
+                    <div class="row">
+                        <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
+                        <p style="margin-left: 40px;">
+                            <a href="#"><b>João Paulo</b></a>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            <br>
+                            <span class="fading-text"><a href="#">Gosto</a> <span style="font-size: 10px;">•</span> 18 minutos atrás</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="block-bottom">
+                    <div class="row">
+                        <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
+                        <textarea placeholder="Escreve algo..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="block">
+                    <div class="row">
+                        <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="40px" height="40px">
+                        <p style="margin-left: 50px;"><a href="#"><b>João Paulo</b></a></p>
+                        <p style="margin-left: 50px;" class="fading-text">19 horas atrás</p>
+                    </div>
+
+                    <div class="row" style="margin: 10px 0;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </div>
+
+                    <div class="row">
+                        <a href="#">Gosto</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Comentar</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="block-bottom">
+                <div class="row">
+                    <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
+                    <textarea placeholder="Escreve algo..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </section>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    {{ html_script('assets/javascript/top-bar.js') }}
+    {{ html_script('assets/javascript/description.js') }}
+{% endblock %}
+

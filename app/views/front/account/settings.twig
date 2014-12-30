@@ -1,0 +1,221 @@
+{% extends 'layouts.master' %}
+
+{% block title %}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div  id="settings" class="col-md-6 col-md-offset-3">
+                <div class="welcome">
+                    <h1><strong>Definições</strong></h1>
+                    <hr>
+                    {{ form_model('profile', {route:['put_profile', user.username], method: 'PUT', class: 'profile', id: 'profile', files: 'true'}) }}
+                    <section>
+
+                        {{ form_label('profile_img', 'Imagem de Perfil') }}
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-picture-o"></i></div>
+                            <div class="settings-profile-img">
+                                <div id="settings-profile-img-preview">
+                                    {% set a=profile.profile_img|split('.') %}
+                                    <img src="{{ url('img/profile/avatar/'~profile.profile_img) }}" alt="{{ a.0 }}" align="left" width="100px" height="100px">
+                                </div>
+                                <div class="settings-profile-img-upload">
+                                    <span id="avatar_upload_container">
+                                        {{ form_file('profile_img', {class: 'dual-content-input', autocomplete: 'off', id: 'profile_img'}) }}
+                                    </span>
+                                    <div style="margin-top: 2px; color: #AAA; font-size: 12px;">JPEG ou PNG. Tamanho máximo: 2MB.</div>
+                                    <br>
+                                </div>
+                                <br clear="all">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        {{ form_label('cover_img', 'Imagem de Capa') }}
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-picture-o"></i></div>
+                            <div class="settings-profile-img">
+                                <div id="settings-profile-img-preview" style="width: 100%; height: 200px; margin: 0 auto;">
+                                    <img src="{{ url('img/profile/cover/'~profile.cover_img) }}" alt="Cover" align="left" width="100%" height="100%">
+                                </div>
+                                <div class="settings-profile-img-upload">
+                                    <span id="avatar_upload_container" style="width: 470px;">
+                                        {{ form_file('cover_img', {class: 'dual-content-input', id: 'cover_img', autocomplete: 'off'}) }}
+                                    </span>
+                                    <div style="margin-top: 2px; color: #AAA; font-size: 12px;">JPEG ou PNG. Tamanho máximo: 2MB.</div>
+                                    <br>
+                                </div>
+                                <br clear="all">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        {{ form_label('first_name', 'Nome') }}
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            {{ form_text('first_name', profile.first_name, {placeholder: 'O teu nome verdadeiro', class: 'form-control', id: 'first_name'}) }}
+                        </div>
+                        <div class="error-div">
+{#                            {% if(errors.messages.first_name |length) %}
+                                {{ errors.messages.first_name[0] }}
+                            {% endif %}#}
+                        </div>
+
+                        <br>
+
+                        {{ form_label('last_name', 'Apelido') }}
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            {{ form_text('last_name', profile.last_name, {placeholder: 'O teu último nome', class: 'form-control', id: 'last_name'}) }}
+                        </div>
+                        <div class="error-div">
+{#                            {% if(errors.messages.last_name |length) %}
+                                {{ errors.messages.last_name[0] }}
+                            {% endif %}#}
+                        </div>
+
+                        <br>
+
+                        {{ form_label('punchline', 'Punchline') }}
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-chain-broken"></i></div>
+                            {{ form_text('punchline', profile.punchline, {placeholder: 'Punchline', class: 'form-control', id: 'punchline'}) }}
+                        </div>
+                        <div class="error-div">
+{#                            {% if(errors.messages.punchline |length) %}
+                                {{ errors.messages.punchline[0] }}
+                            {% endif %}#}
+                        </div>
+
+                        <br>
+
+                        {{ form_label('dia', 'Data de Nascimento') }}
+                        <div id="birthday" class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                            {{ form_text('birth', profile.birth, {class:'form-control', style:'width:100px;float:left', id: 'birth', readonly:'readonly'}) }}
+                            <select class="form-control" style="text-indent:0" name="month" onChange="changeDate(this.options[selectedIndex].value);">
+                                <option value="na">Mês</option>
+                                <option value="1">Jan</option>
+                                <option value="2">Fev</option>
+                                <option value="3">Mar</option>
+                                <option value="4">Abr</option>
+                                <option value="5">Mai</option>
+                                <option value="6">Jun</option>
+                                <option value="7">Jul</option>
+                                <option value="8">Ago</option>
+                                <option value="9">Set</option>
+                                <option value="10">Out</option>
+                                <option value="11">Nov</option>
+                                <option value="12">Dez</option>
+                            </select>
+                            <select class="form-control" style="text-indent:0" name="day" id="day">
+                                <option value="na">Dia</option>
+                            </select>
+                            <select class="form-control" style="text-indent:0" name="year" id="year">
+                                <option value="na">Ano</option>
+                            </select>
+                        </div>
+                        <div class="error-div">
+{#                            {% if(errors.messages.punchline |length) %}
+                                {{ errors.messages.punchline[0] }}
+                            {% endif %}#}
+                        </div>
+
+                        <br>
+
+                        {{ form_label('about', 'Sobre') }}
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-list"></i></div>
+                            {{ form_textarea('about', profile.about, {placeholder: 'Escreve algo sobre ti', class: 'form-control', id: 'about'}) }}
+                        </div>
+                        <div class="error-div">
+{#                            {% if(errors.messages.about |length) %}
+                                {{ errors.messages.about[0] }}
+                            {% endif %}#}
+                        </div>
+
+                    </section>
+
+                    <br>
+
+                    <section class="new-acc">
+                        {{ form_submit('Editar', {class:'btn btn-primary button-full'}) }}
+                    </section>
+
+                    {{ form_close }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+    <script>
+        function changeDate(i){
+            var e = document.getElementById('day');
+            var cDate  = $('#birth').val().split('-');
+            var cYear  = cDate[0];
+            var cMonth = cDate[1];
+            var cDay   = cDate[2];
+
+            var nDate = cYear + '-' + i + '-' + cDay;
+            console.log(nDate) ;
+            while(e.length>0)
+                e.remove(e.length-1);
+            var j=-1;
+            if(i=="na")
+                k=0;
+            else if(i==2)
+                k=28;
+            else if(i==4||i==6||i==9||i==11)
+                k=30;
+            else
+                k=31;
+            while(j++<k){
+                var s=document.createElement('option');
+                var e=document.getElementById('day');
+                if(j==0){
+                    s.text="Dia";
+                    s.value="na";
+                    try{
+                        e.add(s,null);}
+                    catch(ex){
+                        e.add(s);}}
+                else{
+                    s.text=j;
+                    s.value=j;
+                    try{
+                        e.add(s,null);}
+                    catch(ex){
+                        e.add(s);}}}}
+        y = new Date().getFullYear() -12;
+        while (y-->1909){
+            var s = document.createElement('option');
+            var e = document.getElementById('year');
+            s.text=y;
+            s.value=y;
+            try{
+                e.add(s,null);}
+            catch(ex){
+                e.add(s);}}
+
+        function changeYear(y){
+
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,249 @@
+{% extends 'layouts.master' %}
+
+{% block title %}
+    Perfil
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <section class="filme">
+    <div class="movie-container">
+        <div class="jumbotron">
+            <iframe align="middle" width="853" height="480" src="//www.youtube.com/embed/XSGBVzeBUbk?rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 20px;">
+    <div class="col-md-8 no-padding-left">
+        <div class="block">
+            <div class="row-fluid">
+                <h3>Big Buck Bunny animation (1080p HD)</h3>
+            </div>
+            <div class="row-fluid">
+                Enviado por <strong>ThePaparranas</strong>
+            </div>
+            <hr>
+            <a class="black-6" href="#"><i class="fa fa-heart"></i> Favoritos</a> &nbsp;&nbsp;&nbsp;
+            <a class="black-6" href="#"><i class="fa fa-share"></i> Partilhar</a> &nbsp;&nbsp;&nbsp;
+            <a class="black-6" href="#"><i class="fa fa-flag"></i> Reportar</a>
+            <div class="pull-right">
+                <a class="black-6" href="#">Gosto <i class="fa fa-thumbs-up"></i></a> &nbsp;&nbsp;&nbsp;
+                <a class="black-6" href="#"><i class="fa fa-thumbs-down"></i></a>
+            </div>
+        </div>
+        <div class="movie-description block">
+            <div class="row-fluid collapse-group">
+                <strong>Enviado a 3 de Setembro de 2014</strong>
+                <p>Já imaginaram como seria engraçado homens a criarem bebés? Pois é, tendo como produtor executivo Jimmy Fallon chega-nos esta comédia sobre pais e filhos. Três amigos têm em comum o fato de serem pais de bebés, Gary (Anthony Anderson), o pai que fica em casa a cuidar da numerosa família, Nick (Zach Cregger), o pai que trabalha, e Chris (Jesse Bradford), o pai divorciado.</p>
+
+                <div class="collapse small">
+                    <br>
+                    <p><strong>Comédia, Drama (2012)</strong></p>
+                    <p><strong>4</strong> Temporadas e <strong>102</strong> Episódios</p>
+                    <br>
+                    <strong>Realizador:</strong> John Hughes</p>
+                    <strong>Elenco:</strong> Anthony Michael Hall, Kelly LeBrock, Ilan Mitchell-Smith, Bill Paxton</p>
+                </div>
+
+                <hr>
+                <p style="text-align: center;"><a class="read-more small black-6" href="#"><strong>MAIS DETALHES</strong></a></p>
+            </div>
+        </div>
+
+        <div class="row" style="margin:0;">
+            <textarea placeholder="Escreve algo..."></textarea>
+            <div class="block-bottom" style="margin-top: -1px; padding: 5px;">
+                        <span style="padding: 0 10px; line-height: 26px">
+                            <a class="black-9 small" href="#"><i class="fa fa-picture-o"></i> Enviar poster</a>
+                            <a class="black-9 small" href="#" style="margin-left: 20px;"><i class="fa fa-tag"></i> Adicionar tag</a>
+                            <a class="black-9 small" href="#" style="margin-left: 20px;"><i class="fa fa-user"></i> Identificar amigo</a>
+                        </span>
+
+                <button class="btn btn-primary pull-right" style="padding: 2px 10px;">Enviar</button>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="block">
+                <div class="row">
+                    <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="40px" height="40px">
+                    <p style="margin-left: 50px;"><a href="#"><b>João Paulo</b></a></p>
+                    <p style="margin-left: 50px;" class="fading-text">19 horas atrás</p>
+                </div>
+
+                <div class="row" style="margin: 10px 0;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+
+                <div class="row">
+                    <a href="#">Gosto</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Comentar</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Mais</a> <span class="pull-right fading-text" ><i class="fa fa-heart"></i>17&nbsp;&nbsp;<i class="fa fa-comment"></i>3</span>
+                </div>
+            </div>
+
+            <div class="block-bottom">
+                <div class="row">
+                    <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
+                    <p style="margin-left: 40px;">
+                        <a href="#"><b>João Paulo</b></a>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        <br>
+                        <span class="fading-text"><a href="#">Gosto</a> <span style="font-size: 10px;">•</span> 18 minutos atrás</span>
+                    </p>
+                </div>
+            </div>
+            <div class="block-bottom">
+                <div class="row">
+                    <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
+                    <textarea placeholder="Escreve algo..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="block">
+                <div class="row">
+                    <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="40px" height="40px">
+                    <p style="margin-left: 50px;"><a href="#"><b>João Paulo</b></a></p>
+                    <p style="margin-left: 50px;" class="fading-text">19 horas atrás</p>
+                </div>
+
+                <div class="row" style="margin: 10px 0;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+
+                <div class="row">
+                    <a href="#">Gosto</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Comentar</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Mais</a>
+                </div>
+            </div>
+            <div class="block-bottom" style="padding: 5px 10px;">
+                <i class="fa fa-comment fading-text"></i> <a href="#">Mostrar mais comentarios</a>
+            </div>
+            <div class="block-bottom">
+                <div class="row">
+                    <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
+                    <p style="margin-left: 40px;">
+                        <a href="#"><b>João Paulo</b></a>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        <br>
+                        <span class="fading-text"><a href="#">Gosto</a> <span style="font-size: 10px;">•</span> 18 minutos atrás</span>
+                    </p>
+                </div>
+            </div>
+            <div class="block-bottom">
+                <div class="row">
+                    <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
+                    <p style="margin-left: 40px;">
+                        <a href="#"><b>João Paulo</b></a>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        <br>
+                        <span class="fading-text"><a href="#">Gosto</a> <span style="font-size: 10px;">•</span> 18 minutos atrás</span>
+                    </p>
+                </div>
+            </div>
+            <div class="block-bottom">
+                <div class="row">
+                    <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
+                    <textarea placeholder="Escreve algo..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="block">
+                <div class="row">
+                    <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="40px" height="40px">
+                    <p style="margin-left: 50px;"><a href="#"><b>João Paulo</b></a></p>
+                    <p style="margin-left: 50px;" class="fading-text">19 horas atrás</p>
+                </div>
+
+                <div class="row" style="margin: 10px 0;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+
+                <div class="row">
+                    <a href="#">Gosto</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Comentar</a> <span class="fading-text" style="font-size: 10px;">•</span> <a href="#">Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="block-bottom">
+            <div class="row">
+                <img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-circle" alt="" width="30px" height="30px">
+                <textarea placeholder="Escreve algo..."></textarea>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-4" style="padding-left: 0;">
+        <div class="block">
+            <h4>Relacionados</h4>
+            <div class="row">
+                <div class="col-md-5">
+                    <a href="#" class="thumbnail"><img src="img/capas/family-guy.png"></a>
+                </div>
+                <div class="col-md-7" style="margin-left: -20px;">
+                    <p><strong>How I Met Your Mother</strong></p>
+                    <p class="small"><strong>Temporada:</strong> 4</p>
+                    <p class="small"><strong>Episódio:</strong> 16</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <a href="#" class="thumbnail"><img src="img/capas/family-guy.png"></a>
+                </div>
+                <div class="col-md-7" style="margin-left: -20px;">
+                    <p><strong>How I Met Your Mother</strong></p>
+                    <p class="small"><strong>Temporada:</strong> 4</p>
+                    <p class="small"><strong>Episódio:</strong> 16</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <a href="#" class="thumbnail"><img src="img/capas/family-guy.png"></a>
+                </div>
+                <div class="col-md-7" style="margin-left: -20px;">
+                    <p><strong>How I Met Your Mother</strong></p>
+                    <p class="small"><strong>Temporada:</strong> 4</p>
+                    <p class="small"><strong>Episódio:</strong> 16</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <a href="#" class="thumbnail"><img src="img/capas/family-guy.png"></a>
+                </div>
+                <div class="col-md-7" style="margin-left: -20px;">
+                    <p><strong>How I Met Your Mother</strong></p>
+                    <p class="small"><strong>Temporada:</strong> 4</p>
+                    <p class="small"><strong>Episódio:</strong> 16</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <a href="#" class="thumbnail"><img src="img/capas/family-guy.png"></a>
+                </div>
+                <div class="col-md-7" style="margin-left: -20px;">
+                    <p><strong>How I Met Your Mother</strong></p>
+                    <p class="small"><strong>Temporada:</strong> 4</p>
+                    <p class="small"><strong>Episódio:</strong> 16</p>
+                </div>
+            </div>
+            <a href="#" class="btn btn-primary btn-sm btn-block" role="button"><span class="glyphicon glyphicon-refresh"></span> More</a>
+        </div>
+    </div>
+    </div>
+    </section>
+{% endblock %}
+
+    {% block scripts %}
+        {{ parent() }}
+        {{ html_script('assets/javascript/description.js') }}
+    {% endblock %}

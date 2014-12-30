@@ -1,0 +1,79 @@
+{% extends 'layouts.master' %}
+
+{% block title %}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid login-register">
+        <div class="row">
+            <div id="login" class="col-sm-6 col-sm-offset-3 col-xs-12 col-xs-offset-0">
+                <div class="welcome">
+                    <h1><strong>Bem</strong> Vindo</h1>
+                    <div class="row">
+                            Insere os teus dados para assistires a todos os filmes
+                        <span class="pull-right">
+                            <a class="switch-form sign-up" href="{{ route('registar') }}">Ainda não tens conta?</a>
+                        </span>
+                    </div>
+                    <hr>
+                    <div class="form-content">
+                        {{ form_open({action: 'login', class: 'form-signin form-content', id: 'frm_login'}) }}
+                        <section>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                {{ form_text('username', input_old('username')|e, {placeholder: 'Username', class: 'form-control', id: 'username'}) }}
+
+                            </div>
+                            <div class="form-error">
+{#
+                                {% if(errors.messages.username |length) %}
+                                    {{ errors.messages.username[0] }}
+                                {% endif %}
+#}
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                                {{ form_password('password', {placeholder: 'password', class: 'form-control', id: 'password'}) }}
+
+                            </div>
+                            <div class="form-error">
+{#
+                                {% if(errors.messages.password |length) %}
+                                    {{ errors.messages.password[0] }}
+                                {% endif %}
+#}
+                            </div>
+                        </section>
+
+                        <br/>
+
+                        <section class="new-acc">
+                            {{ form_submit('Entrar', {action: 'login', class:'btn btn-primary button-full'}) }}
+                        </section>
+
+                        {{ form_close }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function(){
+            $('body').css('background', 'url(https://secure.netflix.com/us/layout/ecweb/login/login_lifestyle_tall_close_crop.jpg)');
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,578 @@
+{% extends 'front.home.master' %}
+
+{% block title %}
+{% endblock %}
+
+{% block head %}
+	{{ parent() }}
+{% endblock %}
+{% block styles %}
+	{{ parent() }}
+{% endblock %}
+{% block homefilmes %}
+	<div class="col-md-8 no-padding-left">
+	<div class="block">
+	<div role="tabpanel">
+
+	<!-- Nav tabs -->
+	<div class="tester">
+		<ul class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active"><a href="#filmes" aria-controls="home" role="tab" data-toggle="tab">Filmes</a></li>
+			<li role="presentation"><a href="#series" aria-controls="series" role="tab" data-toggle="tab">Séries</a></li>
+			<li role="presentation"><a href="#animes" aria-controls="animes" role="tab" data-toggle="tab">Animes</a></li>
+		</ul>
+	</div>
+
+
+	<!-- Tab panes -->
+	<div class="tab-content">
+	<div role="tabpanel" class="tab-pane fade in active" id="filmes">
+
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-md-5ths" data-toggle="tooltip" title="FILME">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/bigbangtheory.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/walkingdead.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/simpsons.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/flash.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/arrow.png">
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/lucy.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/guardiansofthegalaxy.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/hercules.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/supernatural.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/americanhorrorstory.png">
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/twoandahalfmen.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/sonsofanarchy.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/modernfamily.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/castle.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/breakingbad.png">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div role="tabpanel" class="tab-pane fade" id="series">
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/lucy.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/guardiansofthegalaxy.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/hercules.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/supernatural.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/americanhorrorstory.png">
+				</div>
+			</div>
+		</div>
+
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-md-5ths" data-toggle="tooltip" title="FILME">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/bigbangtheory.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/walkingdead.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/simpsons.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/flash.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/arrow.png">
+				</div>
+			</div>
+		</div>
+
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/twoandahalfmen.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/sonsofanarchy.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/modernfamily.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/castle.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/breakingbad.png">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div role="tabpanel" class="tab-pane fade" id="animes">
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/twoandahalfmen.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/sonsofanarchy.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/modernfamily.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/castle.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/breakingbad.png">
+				</div>
+			</div>
+		</div>
+
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-md-5ths" data-toggle="tooltip" title="FILME">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/bigbangtheory.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/walkingdead.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/simpsons.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/flash.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/arrow.png">
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/lucy.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/guardiansofthegalaxy.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/hercules.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/supernatural.png">
+				</div>
+			</div>
+			<div class="col-md-5ths">
+				<div class="thumbnail-holder">
+					<a href="{{ route('filme') }}"><div class="thumbnail-hover"></div></a>
+					<img class="img-responsive" src="img/videos/thumbnails/americanhorrorstory.png">
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	</div>
+	</div>
+
+	<div class="clearfix"></div>
+	</div>
+
+	<div class="col-md-4 no-padding-right">
+		<div class="block">
+			<b style="display: block; padding-left: 10px; text-align:center; line-height: 32px; height: 36px;">Comentários recentes</b>
+			<div class="clearfix"></div>
+			<div class="row" style="margin-top: 10px;">
+				<div class="home-comment">
+					<div class="row">
+						<img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-rounded" alt="" width="40px" height="40px">
+						<p style="margin-left: 50px;"><b><a href="#">João Paulo</a> &nbsp; <i class="fa fa-caret-right"></i> &nbsp; <a href="{{ route('himym') }}">Breaking Bad</a> </b></p>
+						<p style="margin-left: 50px;" class="fading-text">19 horas atrás</p>
+					</div>
+
+					<div class="row" style="margin: 10px 0;">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua... <a href="#">ler mais</a>
+					</div>
+				</div>
+
+				<div class="home-comment">
+					<div class="row">
+						<img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-rounded" alt="" width="40px" height="40px">
+						<p style="margin-left: 50px;"><b><a href="#">João Paulo</a> &nbsp; <i class="fa fa-caret-right"></i> &nbsp; <a href="{{ route('himym') }}">Breaking Bad</a> </b></p>
+						<p style="margin-left: 50px;" class="fading-text">19 horas atrás</p>
+					</div>
+
+					<div class="row" style="margin: 10px 0;">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua... <a href="#">ler mais</a>
+					</div>
+				</div>
+
+				<div class="home-comment">
+					<div class="row">
+						<img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-rounded" alt="" width="40px" height="40px">
+						<p style="margin-left: 50px;"><b><a href="#">João Paulo</a> &nbsp; <i class="fa fa-caret-right"></i> &nbsp; <a href="{{ route('himym') }}">Breaking Bad</a> </b></p>
+						<p style="margin-left: 50px;" class="fading-text">19 horas atrás</p>
+					</div>
+
+					<div class="row" style="margin: 10px 0;">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua... <a href="#">ler mais</a>
+					</div>
+				</div>
+
+				<div class="home-comment">
+					<div class="row">
+						<img style="float: left;" src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="img-rounded" alt="" width="40px" height="40px">
+						<p style="margin-left: 50px;"><b><a href="#">João Paulo</a> &nbsp; <i class="fa fa-caret-right"></i> &nbsp; <a href="{{ route('himym') }}">Breaking Bad</a> </b></p>
+						<p style="margin-left: 50px;" class="fading-text">19 horas atrás</p>
+					</div>
+
+					<div class="row" style="margin: 10px 0;">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua... <a href="#">ler mais</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+{% endblock %}
+
+{% block homenews %}
+
+	<div class="triangle"></div>
+
+	<div class="row" style="margin-top: 30px; margin-bottom: 30px;">
+		<div class="col-md-3 no-padding">
+			<div class="thumbnail-holder">
+				<a href="{{ route('noticia') }}">
+					<div class="thumbnail-hover">
+						<div class="noticia-info">
+							<p class="title"><b>Nova temporada de Simpsons</b></p>
+							<p class="info"><b><span style="float: left;"><i class="fa fa-eye"></i> 273 </span><span class="pull-right"><i class="fa fa-calendar"></i>24/03/2015</b></span></p>
+						</div>
+					</div>
+				</a>
+				<img src="{{ url('img/noticias/capas/agentsofshield.png') }}" class="thumbnail img-responsive">
+			</div>
+		</div>
+
+		<div class="col-md-3 no-padding">
+			<div class="thumbnail-holder">
+				<a href="{{ route('noticia') }}">
+					<div class="thumbnail-hover">
+						<div class="noticia-info">
+							<p class="title"><b>Nova temporada de Simpsons</b></p>
+							<p class="info"><b><span style="float: left;"><i class="fa fa-eye"></i> 273 </span><span class="pull-right"><i class="fa fa-calendar"></i>24/03/2015</b></span></p>
+						</div>
+					</div>
+				</a>
+				<img src="{{ url('img/noticias/capas/simpsons.png') }}" class="thumbnail img-responsive">
+			</div>
+		</div>
+
+		<div class="col-md-3 no-padding">
+			<div class="thumbnail-holder">
+				<a href="{{ route('noticia') }}">
+					<div class="thumbnail-hover">
+						<div class="noticia-info">
+							<p class="title"><b>Nova temporada de Simpsons</b></p>
+							<p class="info"><b><span style="float: left;"><i class="fa fa-eye"></i> 273 </span><span class="pull-right"><i class="fa fa-calendar"></i>24/03/2015</b></span></p>
+						</div>
+					</div>
+				</a>
+				<img src="{{ url('img/noticias/capas/flash.png') }}" class="thumbnail img-responsive">
+			</div>
+		</div>
+
+		<div class="col-md-3 no-padding">
+			<div class="thumbnail-holder">
+				<a href="{{ route('noticia') }}">
+					<div class="thumbnail-hover">
+						<div class="noticia-info">
+							<p class="title"><b>Nova temporada de Simpsons</b></p>
+							<p class="info"><b><span style="float: left;"><i class="fa fa-eye"></i> 273 </span><span class="pull-right"><i class="fa fa-calendar"></i>24/03/2015</b></span></p>
+						</div>
+					</div>
+				</a>
+				<img src="{{ url('img/noticias/capas/bigbangtheory.png') }}" class="thumbnail img-responsive">
+			</div>
+		</div>
+	</div>
+
+	<div class="row" style="margin-top: 30px; margin-bottom: 30px;">
+		<div class="col-md-3 no-padding">
+			<div class="thumbnail-holder">
+				<a href="{{ route('noticia') }}">
+					<div class="thumbnail-hover">
+						<div class="noticia-info">
+							<p class="title"><b>Nova temporada de Simpsons</b></p>
+							<p class="info"><b><span style="float: left;"><i class="fa fa-eye"></i> 273 </span><span class="pull-right"><i class="fa fa-calendar"></i>24/03/2015</b></span></p>
+						</div>
+					</div>
+				</a>
+				<img src="{{ url('img/noticias/capas/gameofthrones.png') }}" class="thumbnail img-responsive">
+			</div>
+		</div>
+
+		<div class="col-md-3 no-padding">
+			<div class="thumbnail-holder">
+				<a href="{{ route('noticia') }}">
+					<div class="thumbnail-hover">
+						<div class="noticia-info">
+							<p class="title"><b>Nova temporada de Simpsons</b></p>
+							<p class="info"><b><span style="float: left;"><i class="fa fa-eye"></i> 273 </span><span class="pull-right"><i class="fa fa-calendar"></i>24/03/2015</b></span></p>
+						</div>
+					</div>
+				</a>
+				<img src="{{ url('img/noticias/capas/sonsofanarchy.png') }}" class="thumbnail img-responsive">
+			</div>
+		</div>
+
+		<div class="col-md-3 no-padding">
+			<div class="thumbnail-holder">
+				<a href="{{ route('noticia') }}">
+					<div class="thumbnail-hover">
+						<div class="noticia-info">
+							<p class="title"><b>Nova temporada de Simpsons</b></p>
+							<p class="info"><b><span style="float: left;"><i class="fa fa-eye"></i> 273 </span><span class="pull-right"><i class="fa fa-calendar"></i>24/03/2015</b></span></p>
+						</div>
+					</div>
+				</a>
+				<img src="{{ url('img/noticias/capas/supernatural.png') }}" class="thumbnail img-responsive">
+			</div>
+		</div>
+
+		<div class="col-md-3 no-padding">
+			<div class="thumbnail-holder">
+				<a href="{{ route('noticia') }}">
+					<div class="thumbnail-hover">
+						<div class="noticia-info">
+							<p class="title"><b>Nova temporada de Simpsons</b></p>
+							<p class="info"><b><span style="float: left;"><i class="fa fa-eye"></i> 273 </span><span class="pull-right"><i class="fa fa-calendar"></i>24/03/2015</b></span></p>
+						</div>
+					</div>
+				</a>
+				<img src="{{ url('img/noticias/capas/americanhorrorstory.png') }}" class="thumbnail img-responsive">
+			</div>
+		</div>
+	</div>
+
+
+	{#    <b>Notícias</b>
+		<div class="accordian">
+			<ul>
+				<li>
+					<div class="image_title">
+						<a href="{{ route('noticia') }}">KungFu Panda</a>
+					</div>
+					<a href="{{ route('noticia') }}">
+						<img src="http://thecodeplayer.com/uploads/media/3yiC6Yq.jpg"/>
+					</a>
+				</li>
+				<li>
+					<div class="image_title">
+						<a href="{{ route('noticia') }}">Toy Story 2</a>
+					</div>
+					<a href="{{ route('noticia') }}">
+						<img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg"/>
+					</a>
+				</li>
+				<li>
+					<div class="image_title">
+						<a href="{{ route('noticia') }}">Wall-E</a>
+					</div>
+					<a href="{{ route('noticia') }}">
+						<img src="http://thecodeplayer.com/uploads/media/00kih8g.jpg"/>
+					</a>
+				</li>
+				<li>
+					<div class="image_title">
+						<a href="{{ route('noticia') }}">Up</a>
+					</div>
+					<a href="{{ route('noticia') }}">
+						<img src="http://thecodeplayer.com/uploads/media/2rT2vdx.jpg"/>
+					</a>
+				</li>
+				<li>
+					<div class="image_title">
+						<a href="{{ route('noticia') }}">Cars 2</a>
+					</div>
+					<a href="{{ route('noticia') }}">
+						<img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg"/>
+					</a>
+				</li>
+			</ul>
+		</div>#}
+
+
+{% endblock %}

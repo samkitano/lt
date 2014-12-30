@@ -1,0 +1,16 @@
+{% if session_has('err') %}
+    {% set type = 'error' %}
+    {% set alert = session_get('err') %}
+{% elseif session_has('warn') %}
+    {% set type = 'warning' %}
+    {% set alert = session_get('warn') %}
+{% elseif session_has('success') %}
+    {% set type = 'success' %}
+    {% set alert = session_get('success') %}
+{% endif %}
+
+{% if session_has('err') or session_has('warn') or session_has('success') %}
+<script>
+    var a = noty({text: "{{ alert}}" }); a.setType("{{ type }}");
+</script>
+{% endif %}

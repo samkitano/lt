@@ -1,0 +1,175 @@
+<nav id="top-menu" class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#lt-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Live<strong>Tuga</strong></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="lt-navbar-collapse-1">
+            <ul class="nav navbar-nav menu-left">
+                {% if active == 'filmes' %}
+                <li class="active">
+            {% else %}
+                <li>
+                    {% endif %}
+                    <a href="{{ route('filmes') }}">Filmes</a>
+                </li>
+                {% if active == 'series' %}
+                <li class="active">
+            {% else %}
+                <li>
+                    {% endif %}
+                    <a href="{{ route('series') }}">Séries</a>
+                </li>
+                {% if active == 'animes' %}
+                <li class="active">
+            {% else %}
+                <li>
+                    {% endif %}
+                    <a href="{{ route('animes') }}">Animes</a>
+                </li>
+                {% if active == 'noticias' %}
+                <li class="active">
+                    {% else %}
+                <li>
+                    {% endif %}
+                    <a href="{{ route('noticias') }}">Notícias</a>
+                </li>
+                {% if active == 'cronologia' %}
+                <li class="active">
+                    {% else %}
+                <li>
+                    {% endif %}
+                    <a href="">Feed</a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+
+                <div id="top-search" class="form-group multiple-form-group input-group">
+                    <input type="text" name="contacts['value'][]" placeholder="Pesquisar..." class="form-control">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+                        </span>
+                </div>
+            </form>
+
+            {#<ul class="nav navbar-nav navbar-right">
+
+                {% if auth_check() %}
+                    <li class="dropdown">
+                        <a href="#" id="user-card-toggle" class="dropdown-toggle menu-right" data-toggle="dropdown">
+                            <img src="{{ url('img/profile/avatar/'~user.profile_img) }}" alt="" class="tinypic" width="40px" height="40px">
+                            <b>{{ user.username }}</b>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="navbar-content">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <a href="{{ route('profile', auth_user().username) }}"><img src="{{ url('img/profile/avatar/'~user.profile_img) }}" alt="" class="thumbnail img-responsive" width="200px" height="200px"></a>
+                                        </div>
+                                        <div class="col-md-7 user-data">
+                                            <p class="name" style="height: 20px; margin: 0">
+                                                <a href="{{ route('profile', auth_user().username) }}" style=" margin: 0">
+                                                    {{ user.nome }} {{ user.apelido }}
+                                                </a>
+                                            </p>
+
+                                            <p class="username" style="line-height: 15px;">
+                                                <a href="{{ route('profile', auth_user().username) }}">
+                                                    {{ user.username }}
+                                                </a>
+                                            </p>
+
+                                            <a style="margin:0;  border-top-right-radius: 0; border-bottom-right-radius: 0;" href="{{ route('profile', auth_user().username) }}" class="btn btn-primary">Cronologia</a>
+                                            <a style="margin:0 0 0 -5px;  border-top-left-radius: 0; border-bottom-left-radius: 0;" href="{{ route('favoritos', auth_user().username) }}" class="btn btn-primary"><i class="fa fa-heart"></i></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="navbar-footer">
+                                    <div class="navbar-footer-content">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <a href="{{ route('conta', user.id) }}" class="btn btn-default btn-sm">Definições de Conta</a>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <a href="{{ route('logout') }}" class="btn btn-default btn-sm pull-right">Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <a href="{{ route('login') }}" class="btn btn-primary no-border">Entrar</a>
+                    </li>
+                {% endif %}
+            </ul>#}
+
+            <ul class="nav navbar-nav navbar-right">
+
+                {% if auth_check() %}
+                    <li class="dropdown">
+                        <a href="#" id="user-card-toggle" class="dropdown-toggle menu-right" data-toggle="dropdown">
+                            <img src="{{ url('img/profile/avatar/'~user.profile_img) }}" alt="" class="tinypic" width="40px" height="40px">
+                            <b>{{ user.username }}</b>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="navbar-content">
+                                    <div class="row">
+                                        <div class="col-md-4 no-padding">
+                                            <a href="{{ route('profile', auth_user().username) }}"><img src="{{ url('img/profile/avatar/'~user.profile_img) }}" alt="" class="" width="100px" height="100px"></a>
+                                        </div>
+
+                                        <div class="col-md-8">
+                                            <p class="name">
+                                                <b>{{ user.nome }} {{ user.apelido }}</b>
+                                            </p>
+                                            <p class="username">
+                                                @ThePaparranas
+                                            </p>
+
+                                            <a style="margin:0;  border-top-right-radius: 0; border-bottom-right-radius: 0;" href="{{ route('profile', auth_user().username) }}" class="btn btn-primary">Cronologia</a>
+                                            <a style="margin:0 0 0 -5px;  border-top-left-radius: 0; border-bottom-left-radius: 0;" href="{{ route('favoritos', auth_user().username) }}" class="btn btn-primary"><i class="fa fa-heart"></i></a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="navbar-footer">
+                                    <div class="navbar-footer-content">
+                                        <div class="row" style="line-height: 20px;">
+                                            <div class="col-md-6 no-padding">
+                                                <a href="{{ route('conta', user.id) }}" class="btn btn-default btn-sm">Definições de Conta</a>
+                                            </div>
+                                            <div class="col-md-6 no-padding">
+                                                <a href="{{ route('logout') }}" class="btn btn-default btn-sm pull-right">Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <a href="{{ route('login') }}" class="btn btn-primary no-border">Entrar</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+

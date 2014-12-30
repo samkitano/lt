@@ -1,0 +1,226 @@
+{% extends 'front.profile.profile' %}
+
+{#{% set author  = auth_user() %}#}
+{% set tuser   = the_user %}
+{% set posts   = tuser.timelines %}
+
+{% block title %}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+{% endblock %}
+
+{% block profile %}
+    <div class="col-xs-4">
+        <div class="form-group multiple-form-group input-group">
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+            </span>
+            <input type="text" name="contacts['value'][]" placeholder="Pesquisar utilizador..." class="form-control" style="border-radius: 0 2px 2px 0;">
+        </div>
+
+        <div class="block">
+            <b>Punchline</b>
+            <p>"I am the one who knocks"</p>
+        </div>
+
+        <div class="block">
+            <b>Sobre João Paulo</b>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+
+        <div class="block">
+            <b>Sobre João Paulo</b>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+
+    <div class="col-xs-8">
+        <div class="row create-post-container">
+	        <textarea id="create_post_content" placeholder="Escreve algo..."></textarea>
+	        <div class="block-bottom">
+                <span>
+                    <a class="black-9 small" href="#">
+                        <i class="fa fa-picture-o"></i> Enviar poster
+                    </a>
+                    <a class="black-9 small" href="#" style="margin-left: 20px;">
+                        <i class="fa fa-tag"></i> Adicionar tag
+                    </a>
+                    <a class="black-9 small" href="#" style="margin-left: 20px;">
+                        <i class="fa fa-user"></i> Identificar amigo
+                    </a>
+                </span>
+		        <button id="send_post" class="btn btn-primary pull-right">Enviar</button>
+		        <div class="clearfix"></div>
+	        </div>
+        </div>
+
+        <div id="post_container">
+	        {% for post in posts %}
+		        <div class="row posts">
+			        <div class="block post-block" id="post_{{ post.id }}">
+				        <div class="row block-heading">
+					        <img src="{{ url('img/profile/avatar/'~post.author.profiles.profile_img) }}"
+					             class="post-avatar img-circle"
+					             alt="avatar"
+					             width="40px"
+					             height="40px">
+					        {% if auth_check() %}
+					        <div class="dropdown pull-right">
+						        <a href="#" class="dropdown-toggle" type="button" id="post_menu" data-toggle="dropdown" aria-expanded="true">
+							        <i class="fa fa-angle-down"></i>
+						        </a>
+						        <ul class="dropdown-menu" role="menu" aria-labelledby="post_menu">
+							        {% if auth_user().id == post.author_id or auth_user().id == tuser.id %}
+								        <li role="presentation">
+									        <a data-post-id="{{ post.id }}" class="post_delete" role="menuitem" tabindex="-1" href="#">
+										        Eliminar
+									        </a>
+								        </li>
+								        <li role="presentation">
+									        <a data-post-id="{{ post.id }}" class="post_edit" role="menuitem" tabindex="-1" href="#">
+										        Editar
+									        </a>
+								        </li>
+							        {% endif %}
+							        <li role="presentation">
+								        <a data-post-id="{{ post.id }}" class="post_report" role="menuitem" tabindex="-1" href="#">
+									        Reportar
+								        </a>
+							        </li>
+						        </ul>
+					        </div>
+					        {% endif %}
+					        <p>
+						        <a href="{{ route('profile', post.author.username) }}">
+							        <strong>{{ post.author.username }}</strong>
+						        </a>
+					        </p>
+					        <p class="fading-text">
+						        {{ post.created_at }}
+					        </p>
+				        </div>
+
+				        <div class="row post-content">
+					        {{ post.content|e }}
+				        </div>
+
+				        <div class="row block-footer">
+					        <a href="#">Gosto</a>&nbsp;
+					        <span class="fading-text f10">&bullet;</span>&nbsp;
+					        <a href="#">Comentar</a>&nbsp;
+					        <span class="fading-text f10">&bullet;</span>&nbsp;
+					        <a href="#">Mais</a>&nbsp;
+					        <span class="pull-right fading-text" >
+						        <i class="fa fa-heart"></i>&nbsp;{{ post.likes }}&nbsp;&nbsp;
+						        <i class="fa fa-comment"></i>&nbsp;{{ post.timelineComments|length }}
+					        </span>
+				        </div>
+			        </div>
+			        {% for comment in post.timelineComments %}
+				        <div class="block-bottom comment">
+					        <div class="row">
+						        <img src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="post-avatar img-circle" alt="" width="30px" height="30px">
+						        <p style="margin-left: 40px;">
+							        <a href="#"><b>João Paulo</b></a>
+							        {{ comment.content }}
+							        <br>
+							        <span class="fading-text">
+								        <a href="#">Gosto</a>
+								        <span style="font-size: 10px;">•
+								        </span> 18 minutos atrás
+							        </span>
+							        <span class="pull-right fading-text" >
+						                <i class="fa fa-heart"></i>&nbsp;{{ comment.likes }}
+					                </span>
+						        </p>
+					        </div>
+				        </div>
+			        {% endfor %}
+		        </div>
+		        <div class="block-bottom">
+			        <div class="row">
+				        <img src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="post-avatar img-circle" alt="avatar" width="30px" height="30px">
+				        <textarea id="post_comment_{{ post.id }}" placeholder="Escreve algo..."></textarea>
+			        </div>
+		        </div>
+	        {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+	{{ parent() }}
+
+	<script>
+		$('#send_post').on('click', function(e){
+			e.preventDefault();
+			var to_post = $('#create_post_content');
+			var cont = addslashes(to_post.val());
+			if (cont.trim() == '')
+			{
+				to_post.val('');
+				alert('Escreve algo!');
+				return false;
+			}
+
+			var jqxhr = $.post('{{ route("ajax_send_post") }}',
+					{user:'{{ tuser.id }}', author:'{{ auth_user().id }}', content:cont},
+					function(data)
+					{
+					})
+					.done(function(data) {
+						var post = JSON.parse(data);
+						to_post.val('');
+						var container = $('#post_container');
+						var html =   '<div class="row posts">'
+								+'<div class="block post-block" id="post_' + post['id'] + '">'
+								+'<div class="row block-heading">'
+								+'<img src="{{ url('img/profile/avatar/'~author.profiles.profile_img) }}" class="post-avatar img-circle" alt="avatar" width="40px" height="40px">'
+								+'<p><a href="{{ route('profile', auth_user().username) }}"><strong>{{ auth_user().username }}</strong></a></p>'
+								+'<p class="fading-text">' + post['created_at'] + '</p>'
+								+'<div class="row post-content">' + cont + '</div>'
+								+'<div class="row block-footer">'
+								+'<a href="#">Gosto</a>&nbsp;'
+								+'<span class="fading-text f10">&bullet;</span>&nbsp;'
+								+'<a href="#">Comentar</a>&nbsp;'
+								+'<span class="fading-text f10">&bullet;</span>&nbsp;'
+								+'<a href="#">Mais</a>&nbsp;'
+								+'<span class="pull-right fading-text" >'
+								+'<i class="fa fa-heart"></i>&nbsp;'+'0'+'&nbsp;&nbsp;'
+								+'<i class="fa fa-comment"></i>&nbsp;'+'0'
+								+'</span>'
+								+'</div>'
+								+'</div>'
+						container.prepend(html);
+					})
+					.fail(function() {
+						alert( "error" );
+					})
+		})
+
+		$('.post_edit').on('click', function(e)
+		{
+			e.preventDefault();
+			var $this = $(this);
+			var $post_id = $this.attr('data-post-id');
+			var route = "{{ route('ajax_send_edited_post', '_ID_') }}";
+			editPost($post_id, route.replace("_ID_", $post_id), $this);
+
+		});
+
+		$('.post_delete').on('click', function(e){
+			e.preventDefault();
+			var $this = $(this);
+			var $post_id = $this.attr('data-post-id');
+			var route = "{{ route('ajax_delete_post', '_ID_') }}";
+			deletePost($post_id, route.replace("_ID_", $post_id));
+		});
+
+	</script>
+{% endblock %}

@@ -1,0 +1,281 @@
+{% extends 'layouts.master' %}
+
+{% block title %}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+    <section class="filmes">
+    <h1 class="hidden">FILMES</h1>
+    <div class="row no-gutter">
+        <div class="col-xs-12">
+            <div id="carousel" class="carousel slide" data-ride="carousel" style="">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="{{ url('img/videos/capas/simpsons.jpg') }}" alt="" class="slide"/>
+                        <div class="carousel-caption">
+                            <div class="col-md-8 col-md-offset-2">
+                                <p class="caption-title">Simpsons</p>
+                                <p class="caption-description">The adventures of an endearingly ignorant dad and his hilariously odd family of middle-class New Englanders.</p>
+
+                                <br>
+
+                                <i class="fa fa-clock-o"></i> 16 de Setembro de 2014 &nbsp;&nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-eye"></i> 2138 &nbsp;&nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-heart"></i> 1563 &nbsp;&nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-comments"></i> 47 &nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="{{ route('himym') }}" class="btn btn-white">Assistir <i class="fa fa-video-camera"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="{{ url('img/videos/capas/himym.jpg') }}" alt="" class="slide" />
+                        <div class="carousel-caption">
+                            <div class="col-md-8 col-md-offset-2">
+                                <p class="caption-title">How I Met Your Mother</p>
+
+                                <br>
+
+                                <i class="fa fa-clock-o"></i> 16 de Setembro de 2014 &nbsp;&nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-eye"></i> 2138 &nbsp;&nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-heart"></i> 1563 &nbsp;&nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-comments"></i> 47 &nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="{{ route('himym') }}" class="btn btn-white">Assistir <i class="fa fa-video-camera"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{{ url('img/videos/capas/onepiece.png') }}" alt="" class="slide" />
+                        <div class="carousel-caption">
+                            <div class="col-md-8 col-md-offset-2">
+                                <p class="caption-title">One Piece</p>
+
+                                <br>
+
+                                <i class="fa fa-clock-o"></i> 16 de Setembro de 2014 &nbsp;&nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-eye"></i> 2138 &nbsp;&nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-heart"></i> 1563 &nbsp;&nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-comments"></i> 47 &nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="{{ route('himym') }}" class="btn btn-white">Assistir <i class="fa fa-video-camera"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container filmes" style="margin-top: 30px;">
+        <div class="col-xs-4 no-padding-left">
+            <div class="block">
+                <strong style="font-size: 17px; margin-bottom: 0;"><i class="fa fa-film"></i> FILMES</strong>
+                <hr>
+                <ul style="list-style:none; line-height: 25px; padding: 0;">
+                    <b>Ordenar</b>
+                    <div class="category-form">
+                        <form action="">
+                            <label><input type="radio" name="ordem" value="data"> Data<br></label>
+                            <label><input type="radio" name="ordem" value="popularidade"> Popularidade<br></label>
+                            <label><input type="radio" name="ordem" value="pontuação"> Pontuação<br></label>
+                        </form>
+                    </div>
+                    <b>Categorias</b>
+                    <div class="category-form">
+                        <label><input type="checkbox"name="categoria" value="accao"> Ação</label>
+                        <label><input type="checkbox"name="categoria" value="animacao"> Animação</label>
+                        <label><input type="checkbox"name="categoria" value="aventura"> Aventura</label>
+                        <label><input type="checkbox"name="categoria" value="biografia"> Biografia</label>
+                        <label><input type="checkbox"name="categoria" value="comedia"> Comédia</label>
+                        <label><input type="checkbox"name="categoria" value="crime"> Crime</label>
+                        <label><input type="checkbox"name="categoria" value="desporto"> Desporto</label>
+                        <label><input type="checkbox"name="categoria" value="documentario"> Documentário</label>
+                        <label><input type="checkbox"name="categoria" value="drama"> Drama</label>
+                        <label><input type="checkbox"name="categoria" value="familiar"> Familiar</label>
+                        <label><input type="checkbox"name="categoria" value="fantasia"> Fantasia</label>
+                        <label><input type="checkbox"name="categoria" value="scyfy"> Ficção Cientifica</label>
+                        <label><input type="checkbox"name="categoria" value="guerra"> Guerra</label>
+                        <label><input type="checkbox"name="categoria" value="historia"> História</label>
+                        <label><input type="checkbox"name="categoria" value="misterio"> Mistério</label>
+                        <label><input type="checkbox"name="categoria" value="musical"> Musical</label>
+                        <label><input type="checkbox"name="categoria" value="romance"> Romance</label>
+                        <label><input type="checkbox"name="categoria" value="terror"> Terror</label>
+                        <label><input type="checkbox"name="categoria" value="thriller"> Thriller</label>
+                        <label><input type="checkbox"name="categoria" value="western"> Western</label>
+                    </div>
+
+                    <b>Lançamento</b>
+                    <div class="category-form">
+                        <label><input type="checkbox"name="categoria" value="accao"> 2014</label>
+                        <label><input type="checkbox"name="categoria" value="animacao"> 2013</label>
+                        <label><input type="checkbox"name="categoria" value="aventura"> 2012</label>
+                        <label><input type="checkbox"name="categoria" value="biografia"> 2011</label>
+                        <label><input type="checkbox"name="categoria" value="comedia"> 2010</label>
+                        <label><input type="checkbox"name="categoria" value="crime"> 00's</label>
+                        <label><input type="checkbox"name="categoria" value="desporto"> 90's</label>
+                        <label><input type="checkbox"name="categoria" value="documentario"> 80's</label>
+                        <label><input type="checkbox"name="categoria" value="drama"> 70's</label>
+                        <label><input type="checkbox"name="categoria" value="familiar"> 60's</label>
+                        <label><input type="checkbox"name="categoria" value="fantasia"> -60's</label>
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-xs-8">
+            <div class="movie-description block">
+                <div class="row collapse-group">
+
+                    <div class="col-xs-3 no-padding">
+                        <a href="{{ route('filme') }}" class="title"><img src="{{ url('img/videos/thumbnails/simpsons.png') }}" class="thumbnail img-responsive" style="margin-bottom: 0;"></a>
+                    </div>
+
+                    <div class="col-xs-9">
+                        <strong><a href="{{ route('filme') }}" class="title">Game of Thrones</a></strong>
+                        <p class="fading-text">
+                            <b>Game of Thrones</b> - Comédia, Drama, Infantil (2009)
+                        </p>
+                        <p style="margin-top: 10px;">
+                            Game of Thrones passa-se em Westeros, uma terra da Europa Medieval, onde as estações duram anos ou até mesmo décadas.<br> A história gira em torno de uma batalha entre os Sete Reinos, onde duas famílias dominantes estão a lutar pelo controlo do Trono de Ferro, cuja posse assegura a sobrevivência durante o Inverno de 40 anos que está por vir.
+                        </p>
+                    </div>
+
+
+
+                    <div class="clearfix"></div>
+                    <div class="collapse small">
+                        <br>
+                        <p><strong>Comédia, Drama (2012)</strong></p>
+                        <p><strong>4</strong> Temporadas e <strong>102</strong> Episódios</p>
+                        <br>
+                        <strong>Realizador:</strong> John Hughes</p>
+                        <strong>Elenco:</strong> Anthony Michael Hall, Kelly LeBrock, Ilan Mitchell-Smith, Bill Paxton</p>
+                    </div>
+                    <hr>
+
+                    <p style="text-align: center;"><a class="read-more small black-6" href="#"><strong>MAIS DETALHES</strong></a></p>
+                </div>
+            </div>
+
+            <div class="movie-description block">
+                <div class="row collapse-group">
+
+                    <div class="col-xs-3 no-padding">
+                        <a href="{{ route('filme') }}" class="title"><img src="{{ url('img/videos/thumbnails/americanhorrorstory.png') }}" class="thumbnail img-responsive" style="margin-bottom: 0;"></a>
+                    </div>
+
+                    <div class="col-xs-9">
+                        <strong><a href="{{ route('filme') }}">Game of Thrones</a></strong>
+                        <p>
+                            Game of Thrones passa-se em Westeros, uma terra da Europa Medieval, onde as estações duram anos ou até mesmo décadas.<br> A história gira em torno de uma batalha entre os Sete Reinos, onde duas famílias dominantes estão a lutar pelo controlo do Trono de Ferro, cuja posse assegura a sobrevivência durante o Inverno de 40 anos que está por vir.
+                        </p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="collapse small">
+                        <br>
+                        <p><strong>Comédia, Drama (2012)</strong></p>
+                        <p><strong>4</strong> Temporadas e <strong>102</strong> Episódios</p>
+                        <br>
+                        <strong>Realizador:</strong> John Hughes</p>
+                        <strong>Elenco:</strong> Anthony Michael Hall, Kelly LeBrock, Ilan Mitchell-Smith, Bill Paxton</p>
+                    </div>
+                    <hr>
+
+                    <p style="text-align: center;"><a class="read-more small black-6" href="#"><strong>MAIS DETALHES</strong></a></p>
+                </div>
+            </div>
+
+            <div class="movie-description block">
+                <div class="row collapse-group">
+
+                    <div class="col-xs-3 no-padding">
+                        <a href="{{ route('filme') }}"><img src="{{ url('img/videos/thumbnails/hercules.png') }}" class="thumbnail img-responsive" style="margin-bottom: 0;"></a>
+                    </div>
+
+                    <div class="col-xs-9">
+                        <strong><a href="{{ route('filme') }}">Game of Thrones</a></strong>
+                        <p>
+                            Game of Thrones passa-se em Westeros, uma terra da Europa Medieval, onde as estações duram anos ou até mesmo décadas.<br> A história gira em torno de uma batalha entre os Sete Reinos, onde duas famílias dominantes estão a lutar pelo controlo do Trono de Ferro, cuja posse assegura a sobrevivência durante o Inverno de 40 anos que está por vir.
+                        </p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="collapse small">
+                        <br>
+                        <p><strong>Comédia, Drama (2012)</strong></p>
+                        <p><strong>4</strong> Temporadas e <strong>102</strong> Episódios</p>
+                        <br>
+                        <strong>Realizador:</strong> John Hughes</p>
+                        <strong>Elenco:</strong> Anthony Michael Hall, Kelly LeBrock, Ilan Mitchell-Smith, Bill Paxton</p>
+                    </div>
+                    <hr>
+
+                    <p style="text-align: center;"><a class="read-more small black-6" href="#"><strong>MAIS DETALHES</strong></a></p>
+                </div>
+            </div>
+
+            <div class="movie-description block">
+                <div class="row collapse-group">
+
+                    <div class="col-xs-3 no-padding">
+                        <a href="{{ route('filme') }}" class="title"><img src="{{ url('img/videos/thumbnails/lucy.png') }}" class="thumbnail img-responsive" style="margin-bottom: 0;"></a>
+                    </div>
+
+                    <div class="col-xs-9">
+                        <strong><a href="{{ route('filme') }}">Game of Thrones</a></strong>
+                        <p>
+                            Game of Thrones passa-se em Westeros, uma terra da Europa Medieval, onde as estações duram anos ou até mesmo décadas.<br> A história gira em torno de uma batalha entre os Sete Reinos, onde duas famílias dominantes estão a lutar pelo controlo do Trono de Ferro, cuja posse assegura a sobrevivência durante o Inverno de 40 anos que está por vir.
+                        </p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="collapse small">
+                        <br>
+                        <p><strong>Comédia, Drama (2012)</strong></p>
+                        <p><strong>4</strong> Temporadas e <strong>102</strong> Episódios</p>
+                        <br>
+                        <strong>Realizador:</strong> John Hughes</p>
+                        <strong>Elenco:</strong> Anthony Michael Hall, Kelly LeBrock, Ilan Mitchell-Smith, Bill Paxton</p>
+                    </div>
+                    <hr>
+
+                    <p style="text-align: center;"><a class="read-more small black-6" href="#"><strong>MAIS DETALHES</strong></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+{% endblock %}
+    {% block scripts %}
+        {{ parent() }}
+        {{ html_script('assets/javascript/top-bar.js') }}
+        {{ html_script('assets/javascript/description.js') }}
+    {% endblock %}

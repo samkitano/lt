@@ -1,0 +1,183 @@
+{% extends 'layouts.master' %}
+
+{% block title %}
+    Perfil
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <section class="index">
+        <div class="header" style="height: 100%;">
+            <div class="row">
+                <div id="register" class="col-sm-4 col-sm-offset-7 col-xs-12 col-xs-offset-0">
+                    <div class="welcome">
+                        <h1><strong>Bem</strong> Vindo</h1>
+                        <div class="row">
+                            Regista-te para assistires a todos os filmes
+                        <span class="pull-right">
+                            <a href="{{ route('login') }}" class="log-in">Já tens conta?<i class=""></i></a>
+                        </span>
+                        </div>
+                        <hr/>
+                        {{ form_open({action: 'registar', method: 'POST', class: 'register', id: 'registar'}) }}
+                        <section>
+                            <div class="row">
+                                <div class="col-md-12 no-padding">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                        {{ form_text('username', input_old('username')|e, {placeholder: 'Username', class: 'form-control', id: 'username', required: 'required'}) }}
+                                    </div>
+                                    <div class="form-error">
+{#
+                                        {% if(errors.messages.username|length) %}
+                                            {{ errors.messages.username[0] }}
+                                        {% endif %}
+#}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br/>
+
+                            <div class="row">
+                                <div class="col-md-6 no-padding-left">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                        <div class="form-group">
+                                            {{ form_text('first_name', input_old('first_name')|e, {placeholder: 'Nome', class: 'form-control', id: 'firstName', required: 'required'}) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-error">
+{#
+                                    {% if(errors.messages.first_name |length) %}
+                                        {{ errors.messages.first_name[0] }}
+                                    {% endif %}
+#}
+                                </div>
+                                <div class="col-md-6 no-padding-right">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                        <div class="form-group">
+                                            {{ form_text('last_name', input_old('last_name')|e, {placeholder: 'Apelido', class: 'form-control', id: 'lastName', required: 'required'}) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-error">
+{#
+                                    {% if(errors.messages.last_name |length) %}
+                                        {{ errors.messages.last_name[0] }}
+                                    {% endif %}
+#}
+                                </div>
+                            </div>
+
+                            <br/>
+
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-at"></i></div>
+                                {{ form_email('email', input_old('email')|e, {class:'form-control', id: 'email', required: 'required', placeholder:'Email'}) }}
+                            </div>
+                            <div class="form-error">
+{#
+                                {% if(errors.messages.email |length) %}
+                                    {{ errors.messages.email[0] }}
+                                {% endif %}
+#}
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                                {{ form_password('password', {placeholder: 'Password', class: 'form-control', id: 'password', required: 'required', autocomplete:'off'}) }}
+                            </div>
+                            <div class="form-error">
+{#
+                                {% if(errors.messages.password |length) %}
+                                    {{ errors.messages.password[0] }}
+                                {% endif %}
+#}
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                                {{ form_password('confirm', {placeholder: 'Confirmar Password', class: 'form-control', id: 'confirm', required: 'required', autocomplete:'off'}) }}
+                            </div>
+                            <div class="form-error">
+{#
+                                {% if(errors.messages.confirm |length) %}
+                                    {{ errors.messages.confirm[0] }}
+                                {% endif %}
+#}
+                            </div>
+                        </section>
+                        <br/>
+                        <section class="new-acc">
+                            {{ form_submit('Registar', {class:'btn btn-primary button-full'}) }}
+                        </section>
+
+                        {{ form_close }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="read-more">
+            <a href="#index-container"><i class="fa fa-chevron-down"></i></a>
+        </div>
+
+        <div id="index-container">
+            <div class="spot-1">
+                <div class="col-md-5 col-md-offset-1">
+                    <div class="text">
+                        <p class="title">ENTRETENIMENTO EM TODOS OS ECRÃS</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="spot-2">
+                <div class="col-md-12">
+                    <div class="stuff">
+                        <div class="col-md-5 col-md-offset-1">
+                            <img src="{{ url('img/tablet.png') }}" class="img-responsive">
+                        </div>
+                        <div class="col-md-5">
+                            <p class="title">REDE SOCIAL</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="spot-3">
+                <div class="col-md-12">
+                    <div class="stuff">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="text">
+                                <p class="title">Leve o entretenimento para um novo nível</p>
+                                <p>
+                                    Regista-te no LiveTuga gratuitamente para tirares partido de todas as funcionalidades que o site tem para oferecer
+                                </p>
+                                <br>
+                                <a href="{{ route('registar') }}" class="btn btn-primary-beta">REGISTA-TE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    {{ html_script('js/topbar.js') }}
+{% endblock %}

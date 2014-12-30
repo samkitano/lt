@@ -1,0 +1,48 @@
+<div class="block">
+	<a href="{{ route('profile', auth_user().username) }}">
+		<div class="cover-overlay">
+		</div>
+
+		<img class="home-cover" src="{{ url('img/profile/cover/'~user.cover_img) }}" alt="" height="125px" width="100%">
+
+		<div class="overlay">
+			<img class="img-responsive img-circle" src="{{ url('img/profile/avatar/'~user.profile_img) }}" alt="" width="40px" height="40px">
+			<p style="margin-left: 45px;"><b>{{ user.nome }} {{ user.apelido }}</b></p>
+			<p style="margin-left: 45px;">{{ user.username }}</p>
+		</div>
+	</a>
+
+	<ul class="left-menu">
+		<a style="font-size: 15px;" class="black-6" href="{{ route('cronologia') }}">
+			{% if active == 'cronologia' %}
+			<li class="active">
+				{% else %}
+			<li>
+				{% endif %}
+				<i style="width: 25px;" class="fa fa-share-alt"></i> Cronologia
+			</li>
+		</a>
+
+		<a style="font-size: 15px;" class="black-6" href="{{ route('profile', auth_user().username) }}">
+			{% if active == 'profile' %}
+			<li class="active">
+				{% else %}
+			<li>
+				{% endif %}
+				<i style="width: 25px;" class="fa fa-user"></i> Perfil
+			</li>
+		</a>
+
+		<a style="font-size: 15px;" class="black-6" href="#"><li><i style="width: 25px;" class="fa fa-users"></i> Amigos</li></a>
+		<a style="font-size: 15px;" class="black-6" href="#"><li><i style="width: 25px;" class="fa fa-heart"></i> Favoritos</li></a>
+		<a style="font-size: 15px;" class="black-6" href="#"><li><i style="width: 25px;" class="fa fa-history"></i> Histórico</li></a>
+		<a style="font-size: 15px;" class="black-6" href="#"><li><i style="width: 25px;" class="fa fa-info-circle"></i> Sobre</li></a>
+	</ul>
+</div>
+
+<div class="block">
+	<p><b>Dicas sobre o site</b></p>
+	<p>Melhora a tua experiência no site passando por este guia</p>
+	<br>
+	<a href="#" class="btn btn-primary button-full">Visitar guia</a>
+</div>

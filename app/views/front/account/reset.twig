@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LiveTuga - Recuperar Password</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/ico" href="images/favicon.ico" />
+    {{ html_style('css/bootstrap.min.css') }}
+    {{ html_style('http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css') }}
+    {{ html_style('css/animate.min.css') }}
+    {{ html_style('css/styles.min.css') }}
+    <!--[if lt IE 9]>
+    {{ html_script('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') }}
+    {{ html_script('https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js') }}
+    <![endif]-->
+</head>
+
+<body class="brownish-scheme">
+
+<div class="mask"><div id="loader"></div></div>
+<div id="wrap">
+    <div class="row">
+        <div id="content" class="col-md-12 full-page login">
+            <div class="welcome">
+                <img src="{{ url('images/logo-big.png') }}" alt class="logo">
+                <h1><strong>Recuperar</strong> Password</h1>
+                <h5>LiveTuga</h5>
+                {{ form_open({action: 'account-reset', class: 'form-signin', id: 'frm_login'}) }}
+                <section>
+                    <div class="input-group">
+                        {{ form_text('email', input_old('email')|e, {placeholder: 'Email', class: 'form-control', id: 'email'}) }}
+                        <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                    </div>
+                    <div class="form-error">
+                        {% if(errors.messages.email |length) %}
+                            {{ errors.messages.email[0] }}
+                        {% endif %}
+                    </div>
+                </section>
+                {{ form_close }}
+            </div>
+            <a id="process_form" href="#" class="log-in">Recuperar<i class="fa fa-arrow-right fa-5x"></i></a>
+        </div>
+    </div>
+</div>
+
+{{ html_script('https://code.jquery.com/jquery.js') }}
+{{ html_script('js/bootstrap.min.js') }}
+{{ html_script('https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&amp;skin=sons-of-obsidian') }}
+{{ html_script('js/plugins/jquery.nicescroll.min.js') }}
+{{ html_script('js/plugins/blockui/jquery.blockUI.js') }}
+{{ html_script('js/lt.js') }}
+<script>
+    $(function(){
+        $('.welcome').addClass('animated bounceIn');
+        $('#process_form').click(function(e){
+            e.preventDefault();
+            $('#frm_login').submit();
+        });
+        $('#email').on('input',function(){
+           $('#process_form').css('opacity','1');
+        });
+    })
+</script>
+</body>
+</html>
