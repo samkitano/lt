@@ -181,7 +181,7 @@
 						var html =   '<div class="row posts">'
 								+'<div class="block post-block" id="post_' + post['id'] + '">'
 								+'<div class="row block-heading">'
-								+'<img src="{{ url('img/profile/avatar/'~author.profiles.profile_img) }}" class="post-avatar img-circle" alt="avatar" width="40px" height="40px">'
+								+'<img src="{{ url('img/profile/avatar/'~auth_user().profiles.profile_img) }}" class="post-avatar img-circle" alt="avatar" width="40px" height="40px">'
 								+'<p><a href="{{ route('profile', auth_user().username) }}"><strong>{{ auth_user().username }}</strong></a></p>'
 								+'<p class="fading-text">' + post['created_at'] + '</p>'
 								+'<div class="row post-content">' + cont + '</div>'
