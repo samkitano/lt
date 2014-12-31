@@ -66,7 +66,7 @@
 			        <div class="block post-block" id="post_{{ post.id }}">
 				        <div class="row block-heading">
 					        <img src="{{ url('img/profile/avatar/'~post.author.profiles.profile_img) }}"
-					             class="post-avatar img-circle"
+					             class="post-avatar timeline-avatar"
 					             alt="avatar"
 					             width="40px"
 					             height="40px">
@@ -125,7 +125,7 @@
 			        {% for comment in post.timelineComments %}
 				        <div class="block-bottom comment">
 					        <div class="row">
-						        <img src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="post-avatar img-circle" alt="" width="30px" height="30px">
+						        <img src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="post-avatar timeline-avatar" alt="" width="30px" height="30px">
 						        <p style="margin-left: 40px;">
 							        <a href="#"><b>João Paulo</b></a>
 							        {{ comment.content }}
@@ -145,7 +145,7 @@
 		        </div>
 		        <div class="block-bottom">
 			        <div class="row">
-				        <img src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="post-avatar img-circle" alt="avatar" width="30px" height="30px">
+				        <img src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="post-avatar timeline-avatar" alt="avatar" width="30px" height="30px">
 				        <textarea id="post_comment_{{ post.id }}" placeholder="Escreve algo..."></textarea>
 			        </div>
 		        </div>
@@ -180,7 +180,7 @@
 						var html =   '<div class="row posts">'
 								+'<div class="block post-block" id="post_' + post['id'] + '">'
 								+'<div class="row block-heading">'
-								+'<img src="{{ url('img/profile/avatar/'~auth_user().profiles.profile_img) }}" class="post-avatar img-circle" alt="avatar" width="40px" height="40px">'
+								+'<img src="{{ url('img/profile/avatar/'~auth_user().profiles.profile_img) }}" class="post-avatar timeline-avatar" alt="avatar" width="40px" height="40px">'
 								+'<p><a href="{{ route('profile', auth_user().username) }}"><strong>{{ auth_user().username }}</strong></a></p>'
 								+'<p class="fading-text">' + post['created_at'] + '</p>'
 								+'<div class="row post-content">' + cont + '</div>'
