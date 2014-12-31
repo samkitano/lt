@@ -168,7 +168,6 @@
 				alert('Escreve algo!');
 				return false;
 			}
-
 			var jqxhr = $.post('{{ route("ajax_send_post") }}',
 					{user:'{{ tuser.id }}', author:'{{ auth_user().id }}', content:cont},
 					function(data)
