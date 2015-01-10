@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container profile" style="padding: 0; margin-top: 49px;">
+    {#<div class="container profile" style="padding: 0; margin-top: 49px;">
 	    <div class="col-md-12">
 		    <div class="profile-top">
 			    <div class="thumbnail">
@@ -77,10 +77,82 @@
 		    </div>
 	    </div>
 	    {% block profile %}{% endblock %}
+    </div>#}
+
+
+    <div class="profile3">
+
+        <div class="profile-cover3">
+            <div class="header3">
+                <img src="{{ url('img/profile/cover/'~utilizador.cover_img) }}" alt="" width="100%" height="550px">
+                <div class="cover-hover"></div>
+                <div class="cover-content">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="avatar-3">
+                            <button class="btn-cover"><i class="fa fa-user"></i></button>
+                            <img src="{{ url('img/profile/avatar/'~utilizador.profile_img) }}" class="img-circle" width="80px" height="80px">
+                            <button class="btn-cover"><i class="fa fa-envelope-o"></i></button>
+                        </div>
+                        <div class="user-info-3">
+                            <p class="name">{{ utilizador.nome }} {{ utilizador.apelido }}</p>
+                            <p class="username"><i class="fa fa-at"></i>{{ utilizador.username }}</p>
+                            <hr>
+                            <p class="punchline">"{{ utilizador.punchline }}"</p>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile3-menu">
+                    <div class="container">
+                        <div class="col-md-12">
+                            <ul class="user-menu-3">
+                                <a style="font-size: 15px;" class="black-6" href="{{ route('profile', auth_user().username) }}">
+                                    {% if active == 'profile' %}
+                                    <li class="active">
+                                        {% else %}
+                                    <li>
+                                        {% endif %}
+                                        Cronologia
+                                    </li>
+                                </a>
+
+                                <a style="font-size: 15px;" class="black-6" href="{{ route('amigos', auth_user().username) }}">
+                                    {% if active == 'amigos' %}
+                                    <li class="active">
+                                        {% else %}
+                                    <li>
+                                        {% endif %}
+                                        Amigos
+                                    </li>
+                                </a>
+
+                                <a style="font-size: 15px;" class="black-6" href="{{ route('favoritos', auth_user().username) }}">
+                                    {% if active == 'favoritos' %}
+                                    <li class="active">
+                                        {% else %}
+                                    <li>
+                                        {% endif %}
+                                        Favoritos
+                                    </li>
+                                </a>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            {% block profile %}{% endblock %}
+        </div>
     </div>
 
 {% endblock %}
 
-{% block scripts %}
-	{{ parent() }}
-{% endblock %}
+    {% block scripts %}
+        {{ parent() }}
+        {{ html_script('assets/javascript/top-bar.js') }}
+    {% endblock %}

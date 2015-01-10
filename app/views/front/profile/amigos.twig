@@ -10,162 +10,151 @@
     {{ parent() }}
 {% endblock %}
 {% block profile %}
-    <div class="col-xs-4">
-        <div class="block">
-            <div class="row">
-                ORGANIZAR AMIGOS
+    <div class="row" style="margin-bottom:20px;">
+        <div class="friend-card">
+            <div class="col-md-4">
+                <div class="cover">
+                    <img class="img-responsive" src="{{ url('img/profile/cover/'~utilizador.cover_img) }}" alt="">
+                    <div class="cover-hover"></div>
+                    <div class="cover-content">
+                        <div class="avatar">
+                            <img src="{{ url('img/profile/avatar/'~utilizador.profile_img) }}" class="img-circle" width="60px" height="60px">
+                        </div>
+                        <p class="name">{{ utilizador.nome }} {{ utilizador.apelido }}</p>
+                        <p class="username">{{ utilizador.username }}</p>
+                        <hr>
+                        <p class="punchline">{{ utilizador.punchline }}</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="col-md-6">
+                        <i class="fa fa-user"></i> Adicionar amigo
+                    </div>
+                    <i class="fa fa-envelope-o"></i> Enviar mensagem
+                </div>
             </div>
-            <hr>
+        </div>
+        <div class="friend-card">
+            <div class="col-md-4">
+                <div class="cover">
+                    <img class="img-responsive" src="{{ url('img/profile/cover/'~utilizador.cover_img) }}" alt="">
+                    <div class="cover-hover"></div>
+                    <div class="cover-content">
+                        <div class="avatar">
+                            <img src="{{ url('img/profile/avatar/'~utilizador.profile_img) }}" class="img-circle" width="60px" height="60px">
+                        </div>
+                        <p class="name">{{ utilizador.nome }} {{ utilizador.apelido }}</p>
+                        <p class="username">{{ utilizador.username }}</p>
+                        <hr>
+                        <p class="punchline">{{ utilizador.punchline }}</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="col-md-6">
+                        <i class="fa fa-user"></i> Adicionar amigo
+                    </div>
+                    <i class="fa fa-envelope-o"></i> Enviar mensagem
+                </div>
+            </div>
+        </div>
+        <div class="friend-card">
+            <div class="col-md-4">
+                <div class="cover">
+                    <img class="img-responsive" src="{{ url('img/profile/cover/'~utilizador.cover_img) }}" alt="">
+                    <div class="cover-hover"></div>
+                    <div class="cover-content">
+                        <div class="avatar">
+                            <img src="{{ url('img/profile/avatar/'~utilizador.profile_img) }}" class="img-circle" width="60px" height="60px">
+                        </div>
+                        <p class="name">{{ utilizador.nome }} {{ utilizador.apelido }}</p>
+                        <p class="username">{{ utilizador.username }}</p>
+                        <hr>
+                        <p class="punchline">{{ utilizador.punchline }}</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="col-md-6">
+                        <i class="fa fa-user"></i> Adicionar amigo
+                    </div>
+                    <i class="fa fa-envelope-o"></i> Enviar mensagem
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="col-xs-8">
-        <div class="block">
-            <div class="row">
-                AMIGOS
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-md-6 col-xs-12" style="padding-left: 0;">
-                    <div class="block">
-                        <img style="float: left;" src="{{ url('img/profile/avatar/'~utilizador.profile_img) }}" class="img-responsive" width="100px" height="100px">
-
-                        <div style="margin-left: 110px;">
-                            <p style="line-height: 20px;">
-                                <a href="{{ route('profile', auth_user().username) }}" style="line-height: 20px;">
-                                    <b>{{ user.nome }} {{ user.apelido }}</b>
-                                </a>
-                            </p>
-                            <p style="line-height: 20px;">"<i>I am the one who knocks</i>"</p>
-                            <button style="padding: 3px 10px; margin-top: 32px;" class="btn btn-primary"><span class="small"><i class="fa fa-user"></i> Adicionar Amigo</span></button>
+    <div class="row" style="margin-bottom:20px;">
+        <div class="friend-card">
+            <div class="col-md-4">
+                <div class="cover">
+                    <img class="img-responsive" src="{{ url('img/profile/cover/'~utilizador.cover_img) }}" alt="">
+                    <div class="cover-hover"></div>
+                    <div class="cover-content">
+                        <div class="avatar">
+                            <img src="{{ url('img/profile/avatar/'~utilizador.profile_img) }}" class="img-circle" width="60px" height="60px">
                         </div>
-                        <div class="clearfix"></div>
+                        <p class="name">{{ utilizador.nome }} {{ utilizador.apelido }}</p>
+                        <p class="username">{{ utilizador.username }}</p>
+                        <hr>
+                        <p class="punchline">{{ utilizador.punchline }}</p>
+                        <hr>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-xs-12" style="padding-right: 0;">
-                    <div class="block">
-                        <img style="float: left;" src="{{ url('img/profile/avatar/'~utilizador.profile_img) }}" class="img-responsive" width="100px" height="100px">
-
-                        <div style="margin-left: 110px;">
-                            <p style="line-height: 20px;">
-                                <a href="{{ route('profile', auth_user().username) }}" style="line-height: 20px;">
-                                    <b>{{ user.nome }} {{ user.apelido }}</b>
-                                </a>
-                            </p>
-                            <p style="line-height: 20px;">"<i>I am the one who knocks</i>"</p>
-                            <button style="padding: 3px 10px; margin-top: 32px;" class="btn btn-primary"><span class="small"><i class="fa fa-user"></i> Adicionar Amigo</span></button>
-                        </div>
-                        <div class="clearfix"></div>
+                <div class="bottom">
+                    <div class="col-md-6">
+                        <i class="fa fa-user"></i> Adicionar amigo
                     </div>
+                    <i class="fa fa-envelope-o"></i> Enviar mensagem
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-md-6 col-xs-12" style="padding-left: 0;">
-                    <div class="block">
-                        <img style="float: left;" src="{{ url('img/profile/avatar/'~utilizador.profile_img) }}" class="img-responsive" width="100px" height="100px">
-
-                        <div style="margin-left: 110px;">
-                            <p style="line-height: 20px;">
-                                <a href="{{ route('profile', auth_user().username) }}" style="line-height: 20px;">
-                                    <b>{{ user.nome }} {{ user.apelido }}</b>
-                                </a>
-                            </p>
-                            <p style="line-height: 20px;">"<i>I am the one who knocks</i>"</p>
-                            <button style="padding: 3px 10px; margin-top: 32px;" class="btn btn-primary"><span class="small"><i class="fa fa-user"></i> Adicionar Amigo</span></button>
+        </div>
+        <div class="friend-card">
+            <div class="col-md-4">
+                <div class="cover">
+                    <img class="img-responsive" src="{{ url('img/profile/cover/'~utilizador.cover_img) }}" alt="">
+                    <div class="cover-hover"></div>
+                    <div class="cover-content">
+                        <div class="avatar">
+                            <img src="{{ url('img/profile/avatar/'~utilizador.profile_img) }}" class="img-circle" width="60px" height="60px">
                         </div>
-                        <div class="clearfix"></div>
+                        <p class="name">{{ utilizador.nome }} {{ utilizador.apelido }}</p>
+                        <p class="username">{{ utilizador.username }}</p>
+                        <hr>
+                        <p class="punchline">{{ utilizador.punchline }}</p>
+                        <hr>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-xs-12" style="padding-right: 0;">
-                    <div class="block">
-                        <img style="float: left;" src="{{ url('img/profile/avatar/'~utilizador.profile_img) }}" class="img-responsive" width="100px" height="100px">
-
-                        <div style="margin-left: 110px;">
-                            <p style="line-height: 20px;">
-                                <a href="{{ route('profile', auth_user().username) }}" style="line-height: 20px;">
-                                    <b>{{ user.nome }} {{ user.apelido }}</b>
-                                </a>
-                            </p>
-                            <p style="line-height: 20px;">"<i>I am the one who knocks</i>"</p>
-                            <button style="padding: 3px 10px; margin-top: 32px;" class="btn btn-primary"><span class="small"><i class="fa fa-user"></i> Adicionar Amigo</span></button>
-                        </div>
-                        <div class="clearfix"></div>
+                <div class="bottom">
+                    <div class="col-md-6">
+                        <i class="fa fa-user"></i> Adicionar amigo
                     </div>
+                    <i class="fa fa-envelope-o"></i> Enviar mensagem
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-md-6 col-xs-12" style="padding-left: 0;">
-                    <div class="block">
-                        <img style="float: left;" src="{{ url('img/profile/avatar/'~utilizador.profile_img) }}" class="img-responsive" width="100px" height="100px">
-
-                        <div style="margin-left: 110px;">
-                            <p style="line-height: 20px;">
-                                <a href="{{ route('profile', auth_user().username) }}" style="line-height: 20px;">
-                                    <b>{{ user.nome }} {{ user.apelido }}</b>
-                                </a>
-                            </p>
-                            <p style="line-height: 20px;">"<i>I am the one who knocks</i>"</p>
-                            <button style="padding: 3px 10px; margin-top: 32px;" class="btn btn-primary"><span class="small"><i class="fa fa-user"></i> Adicionar Amigo</span></button>
+        </div>
+        <div class="friend-card">
+            <div class="col-md-4">
+                <div class="cover">
+                    <img class="img-responsive" src="{{ url('img/profile/cover/'~utilizador.cover_img) }}" alt="">
+                    <div class="cover-hover"></div>
+                    <div class="cover-content">
+                        <div class="avatar">
+                            <img src="{{ url('img/profile/avatar/'~utilizador.profile_img) }}" class="img-circle" width="60px" height="60px">
                         </div>
-                        <div class="clearfix"></div>
+                        <p class="name">{{ utilizador.nome }} {{ utilizador.apelido }}</p>
+                        <p class="username">{{ utilizador.username }}</p>
+                        <hr>
+                        <p class="punchline">{{ utilizador.punchline }}</p>
+                        <hr>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-xs-12" style="padding-right: 0;">
-                    <div class="block">
-                        <img style="float: left;" src="{{ url('img/profile/avatar/'~utilizador.profile_img) }}" class="img-responsive" width="100px" height="100px">
-
-                        <div style="margin-left: 110px;">
-                            <p style="line-height: 20px;">
-                                <a href="{{ route('profile', auth_user().username) }}" style="line-height: 20px;">
-                                    <b>{{ user.nome }} {{ user.apelido }}</b>
-                                </a>
-                            </p>
-                            <p style="line-height: 20px;">"<i>I am the one who knocks</i>"</p>
-                            <button style="padding: 3px 10px; margin-top: 32px;" class="btn btn-primary"><span class="small"><i class="fa fa-user"></i> Adicionar Amigo</span></button>
-                        </div>
-                        <div class="clearfix"></div>
+                <div class="bottom">
+                    <div class="col-md-6">
+                        <i class="fa fa-user"></i> Adicionar amigo
                     </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 col-xs-12" style="padding-left: 0;">
-                    <div class="block">
-                        <img style="float: left;" src="{{ url('img/profile/avatar/'~utilizador.profile_img) }}" class="img-responsive" width="100px" height="100px">
-
-                        <div style="margin-left: 110px;">
-                            <p style="line-height: 20px;">
-                                <a href="{{ route('profile', auth_user().username) }}" style="line-height: 20px;">
-                                    <b>{{ user.nome }} {{ user.apelido }}</b>
-                                </a>
-                            </p>
-                            <p style="line-height: 20px;">"<i>I am the one who knocks</i>"</p>
-                            <button style="padding: 3px 10px; margin-top: 32px;" class="btn btn-primary"><span class="small"><i class="fa fa-user"></i> Adicionar Amigo</span></button>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xs-12" style="padding-right: 0;">
-                    <div class="block">
-                        <img style="float: left;" src="{{ url('img/profile/avatar/'~utilizador.profile_img) }}" class="img-responsive" width="100px" height="100px">
-
-                        <div style="margin-left: 110px;">
-                            <p style="line-height: 20px;">
-                                <a href="{{ route('profile', auth_user().username) }}" style="line-height: 20px;">
-                                    <b>{{ user.nome }} {{ user.apelido }}</b>
-                                </a>
-                            </p>
-                            <p style="line-height: 20px;">"<i>I am the one who knocks</i>"</p>
-                            <button style="padding: 3px 10px; margin-top: 32px;" class="btn btn-primary"><span class="small"><i class="fa fa-user"></i> Adicionar Amigo</span></button>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+                    <i class="fa fa-envelope-o"></i> Enviar mensagem
                 </div>
             </div>
         </div>

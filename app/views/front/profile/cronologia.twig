@@ -142,13 +142,14 @@
 					        </div>
 				        </div>
 			        {% endfor %}
+                    <div class="block-bottom">
+                        <div class="row">
+                            <img src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="post-avatar timeline-avatar" alt="avatar" width="30px" height="30px">
+                            <textarea id="post_comment_{{ post.id }}" placeholder="Escreve algo..."></textarea>
+                        </div>
+                    </div>
 		        </div>
-		        <div class="block-bottom">
-			        <div class="row">
-				        <img src="{{ url('img/profile/avatar/'~user.profile_img) }}" class="post-avatar timeline-avatar" alt="avatar" width="30px" height="30px">
-				        <textarea id="post_comment_{{ post.id }}" placeholder="Escreve algo..."></textarea>
-			        </div>
-		        </div>
+
 	        {% endfor %}
         </div>
     </div>
