@@ -120,11 +120,13 @@ class HomeController extends BaseController {
     public static function profile($uname) {
 	    $utilizador = User::getThatUser($uname);
 	    $this_user  = User::where('username', $uname)->first();
+	    $this_user_posts = Timeline::where('user_id', $this_user->id)->paginate(10);
         //ddump($user);
         Session::flash('nav', 'profile');
         return View::make('front.profile.cronologia')
 	        ->with('the_user', $this_user)
-	        ->with(compact('utilizador'));
+	        ->with(compact('utilizador'))
+	        ->with('posts', $this_user_posts);
     }
 
     public static function amigos($uname) {

@@ -222,5 +222,20 @@
 			deletePost($post_id, route.replace("_ID_", $post_id));
 		});
 
+		$('#post_container').infinitescroll({
+			navSelector     : ".paginate",
+			nextSelector    : ".paginate a:last",
+			itemSelector    : ".box",
+			debug           : false,
+			dataType        : 'html',
+			path: function(index) {
+				return "?page=" + index;
+			}
+		}, function(newElements, data, url){
+
+			var $newElems = $( newElements );
+			$('#boxes').masonry( 'appended', $newElems, true);
+
+		});
 	</script>
 {% endblock %}

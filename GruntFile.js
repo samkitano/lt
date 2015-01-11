@@ -27,6 +27,7 @@ module.exports = function(grunt) {
                     './bower_components/bootstrap/dist/js/bootstrap.js',
                     './app/assets/javascript/isotope.pkgd.min.js',
                     './app/assets/javascript/jquery.noty.packaged.min.js',
+                    './app/assets/javascript/jquery.infinitescroll.js',
                     './app/assets/javascript/frontend.js'
                 ],
                 dest: './public/assets/javascript/frontend.js'
